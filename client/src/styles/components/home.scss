@@ -1,0 +1,35 @@
+.page-wrapper {
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.4), rgba(0, 0, 0, 0.7)),url('../../../public/project-images/mountain_4.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.top-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 33%;
+  .intro-content {
+    padding-left: 0%;
+    width: 50%;
+    text-align: center;
+    color: white;
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 0px;
+      margin-top: 0px;
+
+    }
+  }
+}
+
+
+.middle-section {
+  height: 100vh;
+}
+
+.bottom-section {
+  height: 100vh;
+}

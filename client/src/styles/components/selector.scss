@@ -1,0 +1,43 @@
+.form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+  margin: 0 auto;
+}
+
+.form-detail {
+  display:flex;
+  flex-direction: column;
+  width:50%;
+  align-items: center;
+  background-color: grey;
+  padding-bottom: 2%;
+  border-radius: 5%;
+  h3 {
+    color: white;
+  }
+  .form-sections {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .form-keys {
+      width: 100px;
+      h4 {
+        color: white;
+      }
+    }
+    input {
+      height: 30px;
+      width: 75px;
+      background-color: lightgray;
+    }
+  }
+  button {
+    width: 70%;
+  }
+}
+
+.ranked-resorts {
+  margin: 0 auto;
+}
