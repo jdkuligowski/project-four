@@ -1,0 +1,52 @@
+.main-section {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .restaurant-card {
+    width: calc(100% - 10px);
+    display: flex;
+    .restaurant-image {
+      width: 50%;
+      img {
+        width: 85%;
+        height:85%;
+      }
+    }
+    .restaurant-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .restaurant-title {
+        text-align: center;
+        h1 {
+          margin:0;
+        }
+        h3 {
+          margin: 0;
+        }
+      }
+      .restaurant-info {
+        h1 {
+          text-align: center;
+          margin: 0;
+        }
+        .detail-row {
+          display: flex;
+          .icon-box {
+            width: 20%;
+            img {
+              width: 100%;
+            }
+          }
+          .detail {
+            width: 40%;
+            h4{
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+}

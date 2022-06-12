@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_z98zney4yq+f*v$p33f4r8^h6ai8=f=j_2+15wys*^-#59x1+'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +85,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
   'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # specifies postgres as the db to use
-        'NAME': 'ski-resorts', # name of db, needs to be created manually `createdb record-store`
+        'NAME': env('DATABASE_NAME'), # name of db, needs to be created manually `createdb record-store`
         'HOST': 'localhost', # host whrere our database server is running, in our case, localhost
         'PORT': 5432
     }

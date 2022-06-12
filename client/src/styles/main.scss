@@ -1,8 +1,12 @@
 * {
   box-sizing: border-box;
+  // font-family: 'Orbitron', sans-serif;
 }
+
 
 
 @import './components/selector.scss';
 @import './components/home.scss';
 @import './components/resortOverview.scss';
+@import './components/restaurants.scss';
+@import './components/navBar.scss';

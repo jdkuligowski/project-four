@@ -47,12 +47,14 @@ const ResortOverview = () => {
             <h4>Ski area selector</h4>
           </div>
         </Link>
-        <div className='feature'>
-          <div className='icon-image'>
-            <img src="/project-images/fork.png" alt="icon" />
+        <Link to={`/resorts/${id}/restaurants`}>
+          <div className='feature'>
+            <div className='icon-image'>
+              <img src="/project-images/fork.png" alt="icon" />
+            </div>
+            <h4>Restaurants in town</h4>
           </div>
-          <h4>Restaurants in town</h4>
-        </div>
+        </Link>
         <div className='feature'>
           <div className='icon-image'>
             <img src="/project-images/ski_2.png" alt="icon" />

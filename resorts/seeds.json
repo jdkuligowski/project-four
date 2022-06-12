@@ -1,0 +1,188 @@
+[
+{
+  "model": "resorts.resort",
+  "pk": 1,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "country": "France",
+    "total_length": 120,
+    "base": 1035,
+    "peak": 3841,
+    "size_range": 2807,
+    "beginner": 60,
+    "intermediate": 50,
+    "expert": 20,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859367/ski-app/chamonix-mountain_wzttbp.webp",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859369/ski-app/chamonix-centre_kurm56.jpg",
+    "mountain_detail": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "resort_restaurants": [
+      2,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ]
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 2,
+  "fields": {
+    "resort": "Les Tros Vallées",
+    "country": "France",
+    "total_length": 600,
+    "base": 1100,
+    "peak": 3230,
+    "size_range": 2130,
+    "beginner": 312,
+    "intermediate": 216,
+    "expert": 72,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859369/ski-app/three-valleys-town_xp9v3x.jpg",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859371/ski-app/three-valleys-slopes_wz9pfx.webp",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 3,
+  "fields": {
+    "resort": "Les Portes due Soleil",
+    "country": "France",
+    "total_length": 580,
+    "base": 985,
+    "peak": 2254,
+    "size_range": 1269,
+    "beginner": 310,
+    "intermediate": 210,
+    "expert": 60,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859368/ski-app/PortesduSoleil-slope_hxwpsr.jpg",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859370/ski-app/portes-du-soleil-town_nem3ce.webp",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 4,
+  "fields": {
+    "resort": "4 Vallées",
+    "country": "Switzerland",
+    "total_length": 412,
+    "base": 821,
+    "peak": 3330,
+    "size_range": 2509,
+    "beginner": 107,
+    "intermediate": 202,
+    "expert": 103,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859379/ski-app/verbier-mountain_soyk89.webp",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859372/ski-app/verbier-town_bknx2z.jpg",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 5,
+  "fields": {
+    "resort": "Via Lattea",
+    "country": "Italy",
+    "total_length": 4000,
+    "base": 1372,
+    "peak": 2789,
+    "size_range": 1417,
+    "beginner": 96,
+    "intermediate": 220,
+    "expert": 84,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859376/ski-app/via-lattea-ski_lovew4.jpg",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859376/ski-app/via-lattea-slope_mtfjvv.jpg",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 6,
+  "fields": {
+    "resort": "Matterhorn",
+    "country": "Switzerland",
+    "total_length": 312,
+    "base": 1562,
+    "peak": 3899,
+    "size_range": 2337,
+    "beginner": 75,
+    "intermediate": 220,
+    "expert": 27,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859362/ski-app/matterhorn-ski_ai8wok.jpg",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859377/ski-app/zermatt-town_ccncsy.jpg",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 7,
+  "fields": {
+    "resort": "Ski Arlberg",
+    "country": "Austria",
+    "total_length": 302,
+    "base": 1300,
+    "peak": 2811,
+    "size_range": 1511,
+    "beginner": 130,
+    "intermediate": 121,
+    "expert": 51,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859364/ski-app/arlberg-slopes_jvjxt2.jpg",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859368/ski-app/arlberg-town_wlr5aj.jpg",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+},
+{
+  "model": "resorts.resort",
+  "pk": 8,
+  "fields": {
+    "resort": "L'Espace Killy",
+    "country": "France",
+    "total_length": 300,
+    "base": 1550,
+    "peak": 3486,
+    "size_range": 1906,
+    "beginner": 170,
+    "intermediate": 78,
+    "expert": 52,
+    "mountain_range": "The Alps",
+    "mountain_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859382/ski-app/ValdIsere-slope_t6ah4f.jpg",
+    "resort_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654859366/ski-app/val-d-town_ajaaq1.jpg",
+    "mountain_detail": [],
+    "resort_restaurants": []
+  }
+}
+]

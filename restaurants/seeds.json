@@ -1,0 +1,322 @@
+[
+{
+  "model": "restaurants.restaurant",
+  "pk": 1,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "L'Hydromel",
+    "area": "Chamonix High Street",
+    "food_drink": "Food & Drink",
+    "cuisine": "Worldwide",
+    "type": "Large Plates",
+    "contact": 1,
+    "location": "25 Av. Ravanel le Rouge, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.hydromel-bar-chamonix.com/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/hydromel_outside_t0jbjp.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/hydromel_indoor_thica8.jpg",
+    "price": 4.0,
+    "google_review": 4.3,
+    "opening_times": "10am-2am"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 2,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Joesephines",
+    "area": "Chamonix Centre",
+    "food_drink": "Food & Drink",
+    "cuisine": "French",
+    "type": "Traditional",
+    "contact": 1,
+    "location": "76 Av. Michel Croz, 74400 Chamonix-Mont-Blanc, France",
+    "website": "N/a",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761238/ski-app/josephine_outdoor_fsdmi1.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761301/ski-app/joesphines_indoor_vk0jqv.jpg",
+    "price": 3.5,
+    "google_review": 4.0,
+    "opening_times": "8am-12am"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 3,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Cap Horn",
+    "area": "Chamonix Centre",
+    "food_drink": "Food",
+    "cuisine": "Worldwide",
+    "type": "Large Plates",
+    "contact": 1,
+    "location": "74 Rue des Moulins, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.caphorn-chamonix.com/fr/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761247/ski-app/cap_horn_outdoor_busrjh.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761244/ski-app/cap_horn_indoor_gusjt3.jpg",
+    "price": 4.5,
+    "google_review": 4.3,
+    "opening_times": "12pm-2:30pm and 7-10:30pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 4,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Bivouac",
+    "area": "Chamonix High Street",
+    "food_drink": "Food",
+    "cuisine": "Alpine",
+    "type": "Traditional",
+    "contact": 1,
+    "location": "266 Rue du Dr Paccard, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://le-bivouac.edan.io/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761233/ski-app/bivouac_outdoor_jxkkre.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761223/ski-app/bivouac_indoor_auyu6y.jpg",
+    "price": 4.0,
+    "google_review": 4.5,
+    "opening_times": "12pm-2:30pm and 6pm-10:30pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 5,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Telecabine",
+    "area": "Chamonix High Street",
+    "food_drink": "Food & Drink",
+    "cuisine": "Alpine",
+    "type": "Large Plates",
+    "contact": 1,
+    "location": "27 Rue de la Tour, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.restaurant-latelecabine.fr/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761226/ski-app/telecabine_outdoor_rfzksl.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654761229/ski-app/telecabine_indoor_t7datw.jpg",
+    "price": 4.0,
+    "google_review": 4.3,
+    "opening_times": "12pm-11pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 6,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Mumma",
+    "area": "Chamonix Centre",
+    "food_drink": "Food & Drink",
+    "cuisine": "Asian Fusion",
+    "type": "Small Plates",
+    "contact": 1,
+    "location": "31 Rue Whymper, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.mumma.fr/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/mumma_outdoor_kfxbfi.webp",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/mumma_indoor_lcivlo.jpg",
+    "price": 4.5,
+    "google_review": 4.8,
+    "opening_times": "6:30pm-11pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 7,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Les Caves",
+    "area": "Chamonix Centre",
+    "food_drink": "Drink",
+    "cuisine": "Small Plates",
+    "type": "Snacks",
+    "contact": 1,
+    "location": "80 Rue des Moulins, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.facebook.com/lescaveschamonix",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/caves_outdoor_v0hnfl.webp",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/caves_indoor_cmb9ap.webp",
+    "price": 4.0,
+    "google_review": 4.3,
+    "opening_times": "6pm-2am"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 8,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Caleche",
+    "area": "Chamonix High Street",
+    "food_drink": "Food",
+    "cuisine": "Alpine",
+    "type": "Traditional",
+    "contact": 1,
+    "location": "18 Rue du Dr Paccard, 74400 Chamonix-Mont-Blanc, France",
+    "website": "http://restaurant-caleche.com/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760850/ski-app/caleche_outdoor_x2d62m.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760850/ski-app/caleche_indoor_xq8tye.jpg",
+    "price": 4.0,
+    "google_review": 4.2,
+    "opening_times": "12pm-11pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 9,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Poco Loco",
+    "area": "Chamonix High Street",
+    "food_drink": "Food",
+    "cuisine": "Burgers",
+    "type": "Fast food",
+    "contact": 1,
+    "location": "47 Rue du Dr Paccard, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://en-gb.facebook.com/pages/category/Fast-food-restaurant/Poco-Loco-358271530853470/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760850/ski-app/poco_loco_outdoor_uhurf2.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760850/ski-app/poco_loco_indoor_z3mqfp.jpg",
+    "price": 3.5,
+    "google_review": 4.5,
+    "opening_times": "10:30am-9pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 10,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Munchies",
+    "area": "Chamonix Centre",
+    "food_drink": "Food & Drink",
+    "cuisine": "Asian Fusion",
+    "type": "Small Plates",
+    "contact": 1,
+    "location": "87 Rue des Moulins, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.munchie.fr/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760850/ski-app/munchies_outdoor_oywrbj.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/munchies_indoor_ynku8f.webp",
+    "price": 4.5,
+    "google_review": 4.6,
+    "opening_times": "6:30pm-2am"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 11,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Moo",
+    "area": "Chamonix Centre",
+    "food_drink": "Food & Drink",
+    "cuisine": "Burgers",
+    "type": "Large Plates",
+    "contact": 1,
+    "location": "239 Av. Michel Croz, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.moobarcuisine.com/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/moo_outdoor_wuinys.webp",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/moo_indoor_bjxwrj.jpg",
+    "price": 4.0,
+    "google_review": 4.4,
+    "opening_times": "12am-12pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 12,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Le Comptoir",
+    "area": "Chamonix High Street",
+    "food_drink": "Food & Drink",
+    "cuisine": "French",
+    "type": "Small Plates",
+    "contact": 1,
+    "location": "97 Rue Joseph Vallot, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.vinsurvin-chamonix.com/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/comptoir_outdoor_rjmqbr.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654771450/ski-app/comptir_indoor_xvmnwf.jpg",
+    "price": 4.5,
+    "google_review": 4.3,
+    "opening_times": "11am-11:30pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 13,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Joia",
+    "area": "Chamonix Centre",
+    "food_drink": "Food",
+    "cuisine": "Italian",
+    "type": "Large Plates",
+    "contact": 1,
+    "location": "95 Rue des Moulins, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.joiachamonix.fr/le-restaurant",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/joia_outside_xaweqg.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760851/ski-app/joia_indoor_vzbcmn.jpg",
+    "price": 4.0,
+    "google_review": 4.6,
+    "opening_times": "11:30am-2pm and 7pm-10pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 14,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Annapurna",
+    "area": "Chamonix High Street",
+    "food_drink": "Food",
+    "cuisine": "Indian",
+    "type": "Traditional",
+    "contact": 1,
+    "location": "62 Av. Ravanel le Rouge, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.annapurna-chamonix.com/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/annapurna_outdoor_zywtm4.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760848/ski-app/annapurna_indoor_f2pgvg.jpg",
+    "price": 4.5,
+    "google_review": 4.3,
+    "opening_times": "11:45am-2:45pm and 6-11pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 15,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "Annapurna II",
+    "area": "Chamonix High Street",
+    "food_drink": "Food",
+    "cuisine": "Indian",
+    "type": "Traditional",
+    "contact": 1,
+    "location": "163 Av. Ravanel le Rouge, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://www.annapurna2grill.com/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654771871/ski-app/annapurna_2_outdoor_jqpwvw.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654771871/ski-app/annapurna_2_indoor_lp4ugu.jpg",
+    "price": 4.5,
+    "google_review": 4.8,
+    "opening_times": "11:30am-3:30pm and 6-11:30pm"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 16,
+  "fields": {
+    "resort": "Chamonix-Mont-Blanc",
+    "name": "La Maison Burger",
+    "area": "Chamonix High Street",
+    "food_drink": "Food",
+    "cuisine": "Burgers",
+    "type": "Large Plates",
+    "contact": 1,
+    "location": "34 Rue du Dr Paccard, 74400 Chamonix-Mont-Blanc, France",
+    "website": "https://en-gb.facebook.com/LMBchamonix/",
+    "outdoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/maison_burger_outdoor_jhavj0.jpg",
+    "indoor_image": "https://res.cloudinary.com/ddqsv9w3r/image/upload/v1654760849/ski-app/maison_burger_indoor_ybuayz.jpg",
+    "price": 4.0,
+    "google_review": 4.3,
+    "opening_times": "12-11pm"
+  }
+}
+]
