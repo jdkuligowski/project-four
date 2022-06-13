@@ -3,8 +3,8 @@ import axios from 'axios'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import Select from 'react-select'
 import Slider from 'react-input-slider'
-// import Modal from 'react-bootstrap/Modal'
-import { Modal } from 'react-bootstrap'
+import Modal from 'react-bootstrap/Modal'
+// import { Modal } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import FormGroup from 'react-bootstrap/esm/FormGroup'
 
@@ -16,12 +16,6 @@ const SkiSelectorTool = () => {
 
   const [errors, setErrors] = useState(false)
 
-  const [totalPoints, setTotalPoints] = useState(100)
-  const [locationValue, setLocationValue] = useState(0)
-  const [pisteValue, setPisteValue] = useState(0)
-  const [offPisteValue, setOffPisteValue] = useState(0)
-  const [breadthValue, setBreadthValue] = useState(0)
-  const [lunchValue, setLunchValue] = useState(0)
 
   const [formData, setFormData] = useState({
     car: '',
@@ -64,6 +58,13 @@ const SkiSelectorTool = () => {
   }, [])
 
 
+  useEffect(() => {
+    if (resorts) {
+      setStateToLocalStorage()
+    }
+  }, [resorts])
+
+
 
 
   const calculation = () => {
@@ -103,7 +104,6 @@ const SkiSelectorTool = () => {
       }).sort((a, b) => b.percentages - a.percentages)
     console.log('new array ->', calculation)
     setResorts(calculation)
-
   }
 
   const setStateToLocalStorage = (token) => {
@@ -115,11 +115,15 @@ const SkiSelectorTool = () => {
     window.localStorage.removeItem('ski-selector-data')
   }
 
+  // const saveResults = (e) => {
+  //   e.preventDefault()
+
+  // }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     removeStateFromStorage()
     calculation()
-    setStateToLocalStorage()
   }
 
   // Setting state and handles for add comment modal
@@ -134,7 +138,6 @@ const SkiSelectorTool = () => {
   return (
     <>
       <main className="ski-selector-page">
-        {/* <section className='ski-selector-content'> */}
         <section className="instruction-overview">
           <div className='selector-title'>
             <h1>Ski Selector</h1>
@@ -148,6 +151,9 @@ const SkiSelectorTool = () => {
           </div>
           <div className='access-buttons'>
             <button className='modal-launch' onClick={handleShow} data-toggle='modal'>Use the tool</button>
+
+            {/* Ski Selector tool section - modal will pop up */}
+
             <Modal show={show} onHide={handleClose} backdrop='static'>
 
               <Modal.Header className="form-filler">
@@ -297,26 +303,33 @@ const SkiSelectorTool = () => {
                     </div>
                   </div>
                 </Form>
-                <hr/>
+                <hr />
               </Modal.Body>
               <Modal.Footer className="modal-footer">
-                <button className='modal-save' onClick={handleSubmit}>
-                  Submit scores
-                </button>
+                <Link to={`/resorts/${id}/detail/`}>
+                  <button className='modal-save' onClick={handleSubmit}>
+                    Get results
+                  </button>
+                </Link>
+                {/* <button className='modal-save' onClick={saveResults}>
+                  Save results
+                </button> */}
                 <button className='modal-close' onClick={handleClose}>
                   Close
                 </button>
               </Modal.Footer>
             </Modal>
-            <button>Show me the list</button>
+            <Link to={`/resorts/${id}/overview`}>
+              <button>Show me the list</button>
+            </Link>
           </div>
         </section>
         <section className='instruction-middle'>
           <div className='selector-detail'>
-            {/* <h3>How it works</h3> */}
-            {/* <p>How does it work? Add your inputs for the 6 dimensions below. We&apos;ll do the rest. </p> */}
+            <h3>How it works</h3>
           </div>
         </section>
+        <hr />
         <section className='instruction-detail'>
           <div className='instruction-grid'>
             <div className='method-row'>
@@ -326,8 +339,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Transport</h4>
                 <hr />
-                <p>Although there are plenty of bus routes, Chamonix can be tricky to navigate without
-                  a car. We&apos;ll account for this when we&apos;re finding the best place for you.
+                <p>Do you have a car to help you get around?
                 </p>
               </div>
             </div>
@@ -338,8 +350,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Weather</h4>
                 <hr />
-                <p>The weather can have a huge impact on your day&apos;s skiing. We have rated each area based
-                  on how they ski in clear, cloudy and white-out conditions
+                <p>What are the current conditions?
                 </p>
               </div>
             </div>
@@ -350,8 +361,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Location</h4>
                 <hr />
-                <p>There is a range of options available for skiing within the Chamonix Valley spread fairly widely. You should
-                  rate how much you value the convenience of being close to the centre of Chamonix.
+                <p>How important it proximity to the town?
                 </p>
               </div>
             </div>
@@ -362,8 +372,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Piste</h4>
                 <hr />
-                <p>We have rated the breadth and the quality fo pistes in a particular area. The difficulty is factored into this,
-                  but make sure you check the difficulty before you make a decision.
+                <p>Are you looking to spend a day on piste?
                 </p>
               </div>
             </div>
@@ -374,8 +383,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Off Piste</h4>
                 <hr />
-                <p>There are some incredible places to explore in the Chamonix Valley if you want to find them. Our off-piste rating largely
-                  focuses on accessible routes within the main mountain areas.
+                <p>Feeling adventurous?
                 </p>
               </div>
             </div>
@@ -386,8 +394,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Lunch</h4>
                 <hr />
-                <p>Lunch can a huge element of a great day&apos;s skiing, but sometimes you might just want to pack a quick bite to maximise
-                  time on the slopes. This value accounts for this.
+                <p>Do you want a nice spot to eat?
                 </p>
               </div>
             </div>

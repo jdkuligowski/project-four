@@ -1,0 +1,215 @@
+.ski-areas-page {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.resort-overview{
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.6), rgba(245, 246, 252, 0.8)),url('../../../public/project-images/chamonix-town.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 92vh;
+  position: relative;
+  h1 {
+    color: #213159;
+    margin: 0;
+    padding-top: 15%;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .resort-info {
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+    height: 70px;
+    background: linear-gradient( rgba(61, 96, 152, 0.75), rgba(61, 96, 152, 0.75));
+    display: flex;
+    justify-content: space-around;
+    color: #e7e7e7;
+    .resort-summary {
+      display: flex;
+      align-items: center;
+      margin-left: 2%;
+      margin-right: 1%;
+      h4 {
+        font-size: 0.9rem;
+        margin-top: 6px;
+      }
+      .resort-icon {
+        width: 40px;
+        background-color: #e7e7e7;
+        padding: 5px;
+        border-radius: 20px;
+        margin-right: 5px;
+        img {
+          width: 100%;
+        }
+      }
+      
+      }
+    }
+  }
+
+
+.resort-details {
+  padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #e7e7e7;
+  h2 {
+    font-size: 1.3rem;
+  }
+  .resort-grid {
+    .grid-card {
+      background-color: white;
+      display: flex;
+      width: 100%;
+      margin-bottom: 2%;
+      height: 50%;
+      .grid-left {
+        width: 50%;
+        position:relative;
+        background: linear-gradient( rgba(61, 96, 152, 1), rgba(61, 96, 152, 1));
+        .grid-image {
+          height: 100%;
+        }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          opacity: 0.8;
+        }
+        .mountain-info {
+          display: flex;
+          height: 50px;
+          width: 100%;
+          justify-content: space-around;
+          color: #e7e7e7;
+          position: absolute;
+          bottom: 0%;
+          background: linear-gradient( rgba(61, 96, 152, 0.2), rgba(61, 96, 152, 1));
+          .mountain-summary {
+            display: flex;
+            align-items: center;
+            margin-left: 2%;
+            margin-right: 2%;
+
+            h4 {
+              font-size: 0.9rem;
+              margin-top: 6px;
+            }
+          }
+        }
+      }
+      .grid-right {
+        width: 50%;
+        padding-left: 3%;
+        padding-right:3%;
+        h1{
+          font-size: 2rem;
+          margin: 0;
+          text-align: center;
+          margin-top: 2%;
+        }
+        h4 {
+          font-size: 0.8rem;
+          text-align: center;
+          margin: 0;
+        }
+        .resort-buttons {
+          display: flex;
+          justify-content: center;
+          button {
+            font-family: 'Roboto Mono', monospace;
+            padding: 5px;
+            width: 150px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: #3d6098;
+            color: #e7e7e7;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid #213159;
+          }
+        }
+        .resort-ratings {
+          display: flex;
+          flex-direction: column;
+          .rating-row {
+            display: flex;
+            align-items: center ;
+            margin-bottom: 3%;
+            .rating-icon {
+              width: 7%;
+              margin-right: 3%;
+              img {
+                width: 90%;
+              }
+            }
+            .rating-name {
+              h5 {
+                margin-right: 3%;
+                width: 120px;
+                font-size: 1em;
+                font-weight: bold;
+              }
+            }
+            .rating-detail {
+              width: 70%;
+              .star-array {
+                display: flex;
+                margin-bottom: 1%;
+              }
+              .stars {
+                width: 5%;
+                margin-left: 1%;
+                margin-right: 1%;
+                img {
+                  width: 100%;
+                }
+              }
+              p {
+                font-size: 0.6em;
+                margin: 0;
+                margin-left: 1%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.colour-icon{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  .beg-colour {
+    background-color: #213159;
+    color: #213159;
+    width: 100%;
+    height: 100%;
+    // margin-left: 40%;
+    border-radius: 10px;
+  }
+  .int-colour {
+    background-color: red;
+    color: red;
+    width: 100%;
+    height: 100%;
+    // margin-left: 40%;
+    border-radius: 10px;
+  }
+  .exp-colour {
+    background-color: black;
+    color: black;
+    width: 100%;
+    height: 100%;
+    // margin-left: 40%;
+    border-radius: 10px;
+  }
+}

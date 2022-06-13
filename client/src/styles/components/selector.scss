@@ -6,7 +6,7 @@
   background-color: #e7e7e7;
   margin:0;
   padding: 0;
-  height: 1100px;
+  height: 800px;
   font-family: 'Roboto Mono', monospace;
   
 }
@@ -18,8 +18,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 4%;
-  padding-top: 4%;
+  padding-bottom: 7%;
+  padding-top: 7%;
   text-align: center;
   .selector-title{
     color: #213159;
@@ -59,10 +59,11 @@
 .instruction-middle {
   .selector-detail {
     text-align: center;
-    padding-top: 2%;
-    padding-bottom: 1%;
-    p {
-      margin-top: 0;
+    padding-top: 0.5%;
+    padding-bottom: 0%;
+    h3 {
+      color: #213159;
+      font-size: 1.5rem;
     }
   }
 }
@@ -81,16 +82,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: calc((100%/ 3 - 40px));
+      width: calc((100%/ 6 - 40px));
       margin: 10px;
       background-color: white;
-      height: 55%;
+      height: 90%;
       border-radius: 5px;
       .method-icons {
-        width: 80px;
-        height: 80px;
+        width:60px;
+        height: 60px;
         border-radius: 40px;
-        margin-top: 10%;
+        margin-top: 4%;
         background-color: #b42033;
         display: flex;
         flex-direction: column;
@@ -106,13 +107,14 @@
         h4 {
           margin-top: 4%;
           font-weight: bold;
-          font-size: 1.0rem;
+          font-size: 0.8rem;
           margin-bottom: 0;
         }
         p {
           padding-left: 10%;
           padding-right: 10%;
-          font-size: 0.8rem;
+          font-size: 0.7rem;
+          margin-bottom: 10%;
         }
       }
     }
