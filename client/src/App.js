@@ -20,6 +20,7 @@ import Lunches from './components/resortPlanning/Lunches'
 import MountainDetails from './components/resortPlanning/MountainDetails'
 import Resorts from './components/findResort/Resorts'
 import NavBar from './components/common/NavBar.js'
+import Footer from './components/common/Footer.js'
 
 
 
@@ -73,6 +74,7 @@ const App = () => {
           <Route path='/resorts/:id/lunches' element={<Lunches />} />
 
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </main>
   )

@@ -101,14 +101,14 @@ const SkiSelectorList = () => {
         <h1>Ski Selector Results</h1>
         <div className='results-overview'>
           <div className='results-description'>
-            <h2>{languages ? languageState === 'english' ? languages[67].english : languageState === 'french' ? languages[67].french : languages[67].german : ''}</h2>
-            <h3>{languages ? languageState === 'english' ? languages[68].english : languageState === 'french' ? languages[68].french : languages[68].german : ''} 
-              <span> {topResort.sub_resort}</span> {languages ? languageState === 'english' ? languages[69].english : languageState === 'french' ? languages[69].french : languages[69].german : ''}</h3>
+            <h2>{languages ? languageState === 'english' ? languages[67].english : languageState === 'french' ? languages[67].french : languageState === 'german' ? languages[67].german : languages[67].english : ''}</h2>
+            <h3>{languages ? languageState === 'english' ? languages[68].english : languageState === 'french' ? languages[68].french : languageState === 'german' ? languages[68].german : languages[68].english : ''}
+              <span> {topResort.sub_resort}</span> {languages ? languageState === 'english' ? languages[69].english : languageState === 'french' ? languages[69].french : languageState === 'german' ? languages[69].german : languages[69].english : ''}</h3>
           </div>
           <div className='results-detail'>
-            <h2>{languages ? languageState === 'english' ? languages[70].english : languageState === 'french' ? languages[70].french : languages[70].german : ''}</h2>
+            <h2>{languages ? languageState === 'english' ? languages[70].english : languageState === 'french' ? languages[70].french : languageState === 'german' ? languages[70].german : languages[70].english : ''}</h2>
             <div className='bar-chart-array'>
-              <div className='rating-title'>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : ''}</div>
+              <div className='rating-title'>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languageState === 'german' ? languages[43].german : languages[43].english : ''}</div>
               {[...Array(locationValue)].map((choice, index) => {
                 return (
                   <div className='bars' key={index} >
@@ -126,7 +126,7 @@ const SkiSelectorList = () => {
               <h4>{locationValue}</h4>
             </div>
             <div className='bar-chart-array'>
-              <div className='rating-title'>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : ''}</div>
+              <div className='rating-title'>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languageState === 'german' ? languages[45].german : languages[45].english : ''}</div>
               {[...Array(lunchValue)].map((choice, index) => {
                 return (
                   <div className='bars' key={index} >
@@ -162,7 +162,7 @@ const SkiSelectorList = () => {
               <h4>{pisteValue}</h4>
             </div>
             <div className='bar-chart-array'>
-              <div className='rating-title'>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : ''}</div>
+              <div className='rating-title'>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languageState === 'german' ? languages[44].german : languages[44].english : ''}</div>
               {[...Array(offPisteValue)].map((choice, index) => {
                 return (
                   <div className='bars' key={index} >
@@ -184,7 +184,7 @@ const SkiSelectorList = () => {
         </div>
       </section>
 
-      <h2>{languages ? languageState === 'english' ? languages[71].english : languageState === 'french' ? languages[71].french : languages[71].german : ''}</h2>
+      <h2>{languages ? languageState === 'english' ? languages[71].english : languageState === 'french' ? languages[71].french : languageState === 'german' ? languages[71].german : languages[71].english : ''}</h2>
       <hr />
       <div className="resort-grid-list">
         {resorts.map(m => {
@@ -216,7 +216,7 @@ const SkiSelectorList = () => {
                             .
                           </div>
                         </div>
-                        <h4>{m.blue_runs} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languages[19].german : ''}</h4>
+                        <h4>{m.blue_runs} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languageState === 'german' ? languages[19].german : languages[19].english : ''}</h4>
                       </div>
                       <div className='mountain-summary'>
                         <div className='colour-icon'>
@@ -224,7 +224,7 @@ const SkiSelectorList = () => {
                             .
                           </div>
                         </div>
-                        <h4>{m.red_runs} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languages[18].german : ''}</h4>
+                        <h4>{m.red_runs} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languageState === 'german' ? languages[18].german : languages[18].english : ''}</h4>
                       </div>
                       <div className='mountain-summary'>
                         <div className='colour-icon'>
@@ -232,14 +232,14 @@ const SkiSelectorList = () => {
                             .
                           </div>
                         </div>
-                        <h4>{m.black_runs} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languages[17].german : ''}</h4>
+                        <h4>{m.black_runs} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languageState === 'german' ? languages[17].german : languages[17].english : ''}</h4>
                       </div>
                     </div>
                   </div>
                   <div className="grid-right">
                     <div className='resort-buttons'>
-                      <button>{languages ? languageState === 'english' ? languages[41].english : languageState === 'french' ? languages[41].french : languages[41].german : ''}</button>
-                      <button>{languages ? languageState === 'english' ? languages[42].english : languageState === 'french' ? languages[42].french : languages[42].german : ''}</button>
+                      <button>{languages ? languageState === 'english' ? languages[41].english : languageState === 'french' ? languages[41].french : languageState === 'german' ? languages[41].german : languages[41].english : ''}</button>
+                      <button>{languages ? languageState === 'english' ? languages[42].english : languageState === 'french' ? languages[42].french : languageState === 'german' ? languages[42].german : languages[42].english : ''}</button>
                     </div>
                     <hr />
                     <div className='resort-ratings'>
@@ -248,7 +248,7 @@ const SkiSelectorList = () => {
                           <img src="/project-images/location.png" alt="location icon" />
                         </div>
                         <div className="rating-name">
-                          <h5>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : ''}</h5>
+                          <h5>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languageState === 'german' ? languages[43].german : languages[43].english : ''}</h5>
                           <p>Importance: {m.locationInput}/10</p>
                         </div>
                         <div className="rating-detail">
@@ -261,7 +261,7 @@ const SkiSelectorList = () => {
                               )
                             })}
                           </div>
-                          <p>{languages ? languageState === 'english' ? m.location_car : languageState === 'french' ? m.location_car_fr : m.location_car_de : '' }</p>
+                          <p>{languages ? languageState === 'english' ? m.location_car : languageState === 'french' ? m.location_car_fr : languageState === 'german' ? m.location_car_de : m.location_car : ''}</p>
                         </div>
                       </div>
                       <div className="rating-row">
@@ -282,7 +282,7 @@ const SkiSelectorList = () => {
                               )
                             })}
                           </div>
-                          <p>{languages ? languageState === 'english' ? m.piste : languageState === 'french' ? m.piste_fr : m.piste_de : ''}</p>
+                          <p>{languages ? languageState === 'english' ? m.piste : languageState === 'french' ? m.piste_fr : languageState === 'german' ? m.piste_de : m.piste : ''}</p>
                         </div>
                       </div>
                       <div className="rating-row">
@@ -290,7 +290,7 @@ const SkiSelectorList = () => {
                           <img src="/project-images/goggles.png" alt="" />
                         </div>
                         <div className="rating-name">
-                          <h5>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : ''}</h5>
+                          <h5>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languageState === 'german' ? languages[44].german : languages[44].english : ''}</h5>
                           <p>Importance: {m.offPisteInput}/10</p>
                         </div>
                         <div className="rating-detail">
@@ -303,7 +303,7 @@ const SkiSelectorList = () => {
                               )
                             })}
                           </div>
-                          <p>{languages ? languageState === 'english' ? m.off_piste : languageState === 'french' ? m.off_piste_fr : m.off_piste_de : ''}</p>
+                          <p>{languages ? languageState === 'english' ? m.off_piste : languageState === 'french' ? m.off_piste_fr : languageState === 'german' ? m.off_piste_de : m.off_piste : ''}</p>
                         </div>
                       </div>
                       <div className="rating-row">
@@ -311,7 +311,7 @@ const SkiSelectorList = () => {
                           <img src="/project-images/restaurant.png" alt="" />
                         </div>
                         <div className="rating-name">
-                          <h5>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : ''}</h5>
+                          <h5>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languageState === 'german' ? languages[45].german : languages[45].english : ''}</h5>
                           <p>Importance: {m.lunchInput}/10</p>
                         </div>
                         <div className="rating-detail">
@@ -324,7 +324,7 @@ const SkiSelectorList = () => {
                               )
                             })}
                           </div>
-                          <p>{languages ? languageState === 'english' ? m.lunch : languageState === 'french' ? m.lunch_fr : m.lunch_de : ''}</p>
+                          <p>{languages ? languageState === 'english' ? m.lunch : languageState === 'french' ? m.lunch_fr : languageState === 'german' ? m.lunch_de : m.lunch : ''}</p>
                         </div>
                       </div>
                       <div className="rating-row">
@@ -332,12 +332,12 @@ const SkiSelectorList = () => {
                           <img src="/project-images/morning-snow.png" alt="" />
                         </div>
                         <div className="rating-name">
-                          <h5>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : ''}</h5>
+                          <h5>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languageState === 'german' ? languages[39].german : languages[39].english : ''}</h5>
                           <p>{choices.conditions}</p>
                         </div>
                         <div className="rating-detail">
 
-                          <p>{languages ? languageState === 'english' ? m.weather_comment : languageState === 'french' ? m.weather_comment_fr : m.weather_comment_de : ''}</p>
+                          <p>{languages ? languageState === 'english' ? m.weather_comment : languageState === 'french' ? m.weather_comment_fr : languageState === 'german' ? m.weather_comment_de : m.weather_comment : ''}</p>
                         </div>
                       </div>
                     </div>

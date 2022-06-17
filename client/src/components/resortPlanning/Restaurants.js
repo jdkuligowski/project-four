@@ -73,8 +73,8 @@ const Restaurants = () => {
       <section className='restaurant-page'>
         <section className="restaurant-top">
           <div className='resort-image-top' style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.6), rgba(245, 246, 252, 0.8)), url('${resorts.resort_image}')` }}>
-            <h1>{languages ? languageState === 'english' ? languages[73].english : languageState === 'french' ? languages[73].french : languages[73].german : ''} {resorts.resort}</h1>
-            <p>{languages ? languageState === 'english' ? languages[74].english : languageState === 'french' ? languages[74].french : languages[74].german : ''} </p>
+            <h1>{languages ? languageState === 'english' ? languages[73].english : languageState === 'french' ? languages[73].french : languageState === 'german' ? languages[73].german : languages[73].english : ''} {resorts.resort}</h1>
+            <p>{languages ? languageState === 'english' ? languages[74].english : languageState === 'french' ? languages[74].french : languageState === 'german' ? languages[74].german : languages[74].english : ''} </p>
           </div>
         </section>
         <div className='restaurant-overview'>
@@ -87,12 +87,12 @@ const Restaurants = () => {
             return (
               <div className='restaurant-card' key={(r.id)}>
                 <div className='restaurant-image'>
-                  <img src={r.outdoor_image} alt={r.name} onMouseEnter={e => (e.currentTarget.src = r.indoor_image)} onMouseLeave={e => (e.currentTarget.src = r.outdoor_image)}/>
+                  <img src={r.outdoor_image} alt={r.name} onMouseEnter={e => (e.currentTarget.src = r.indoor_image)} onMouseLeave={e => (e.currentTarget.src = r.outdoor_image)} />
                 </div>
                 <div className='restaurant-detail'>
-                  <div className='restaurant-title'> 
+                  <div className='restaurant-title'>
                     <h1>{r.name}</h1>
-                    <h3>{languages ? languageState === 'english' ? r.area : languageState === 'french' ? r.area_fr : r.area_de : ''}</h3>
+                    <h3>{languages ? languageState === 'english' ? r.area : languageState === 'french' ? r.area_fr : languageState === 'german' ? r.area_de : r.area : ''}</h3>
                     <div className='google-review'>
                       <h3>{r.google_review}</h3>
                       <div className='rating-icon'>
@@ -103,7 +103,7 @@ const Restaurants = () => {
                   </div>
                   <hr />
                   <div className='restaurant-info'>
-                    <h1>{languages ? languageState === 'english' ? languages[76].english : languageState === 'french' ? languages[76].french : languages[76].german : ''}</h1>
+                    <h1>{languages ? languageState === 'english' ? languages[76].english : languageState === 'french' ? languages[76].french : languageState === 'german' ? languages[76].german : languages[76].english : ''}</h1>
                     <div className='detail-row'>
                       <div className='icon-box'>
                         <img src="/project-images/back-in-time.png" alt="icon" />
@@ -117,7 +117,7 @@ const Restaurants = () => {
                         <img src="/project-images/fork.png" alt="icon" />
                       </div>
                       <div className='detail'>
-                        <h4>{languages ? languageState === 'english' ? r.food_drink : languageState === 'french' ? r.food_drink_fr : r.food_drink_de : ''}</h4>
+                        <h4>{languages ? languageState === 'english' ? r.food_drink : languageState === 'french' ? r.food_drink_fr : languageState === 'german' ? r.food_drink_de : r.food_drink : ''}</h4>
                       </div>
                     </div>
                     <div className='detail-row'>
@@ -125,7 +125,7 @@ const Restaurants = () => {
                         <img src="/project-images/worldwide.png" alt="icon" />
                       </div>
                       <div className='detail'>
-                        <h4>{languages ? languageState === 'english' ? r.cuisine : languageState === 'french' ? r.cuisine_fr : r.cuisine_de : ''}</h4>
+                        <h4>{languages ? languageState === 'english' ? r.cuisine : languageState === 'french' ? r.cuisine_fr : languageState === 'german' ? r.cuisine_de : r.cuisine : ''}</h4>
                       </div>
                     </div>
                     <div className='detail-row'>
@@ -133,7 +133,7 @@ const Restaurants = () => {
                         <img src="/project-images/dish.png" alt="icon" />
                       </div>
                       <div className='detail'>
-                        <h4>{languages ? languageState === 'english' ? r.type : languageState === 'french' ? r.type_fr : r.type_de : ''}</h4>
+                        <h4>{languages ? languageState === 'english' ? r.type : languageState === 'french' ? r.type_fr : languageState === 'german' ? r.type_de : r.type : ''}</h4>
                       </div>
                     </div>
                     <div className='detail-row'>
@@ -146,7 +146,7 @@ const Restaurants = () => {
                     </div>
                   </div>
                   <div className='restaurant-link'>
-                    <Link to={r.website}><button className='website-link'>Visit website</button></Link>
+                    <a target='_blank'  href={r.website} rel="noreferrer"><button className='website-link'>{languages ? languageState === 'english' ? languages[92].english : languageState === 'french' ? languages[92].french : languageState === 'german' ? languages[92].german : languages[92].english : ''}</button></a>
                   </div>
                 </div>
 

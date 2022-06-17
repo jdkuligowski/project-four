@@ -63,7 +63,7 @@ const ImageUpload = ({ formData, setFormData }) => {
     <div className='image-upload'>
       <Form.Group>
         <div className='upload'>
-          <label htmlFor="resort_image" className="image">* {languages ? languageState === 'english' ? languages[85].english : languageState === 'french' ? languages[85].french : languages[85].german : '' }</label>
+          <label htmlFor="resort_image" className="image">* {languages ? languageState === 'english' ? languages[85].english : languageState === 'french' ? languages[85].french : languageState === 'german' ? languages[85].german : languages[85].english : ''}</label>
           <input
             name="resort_image"
             className="input"
@@ -74,7 +74,7 @@ const ImageUpload = ({ formData, setFormData }) => {
       </Form.Group>
       <Form.Group>
         <div className='upload'>
-          <label htmlFor="mountain_image" className="image">* {languages ? languageState === 'english' ? languages[86].english : languageState === 'french' ? languages[86].french : languages[86].german : '' }</label>
+          <label htmlFor="mountain_image" className="image">* {languages ? languageState === 'english' ? languages[86].english : languageState === 'french' ? languages[86].french : languageState === 'german' ? languages[86].german : languages[86].english : ''}</label>
           <input
             name="mountain_image"
             className="input"

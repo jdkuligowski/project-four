@@ -7,4 +7,4 @@ from jwt_auth.serializers.common import UserSerializer
 class PopulatedResortSerializer(ResortSerializer):
     mountain_detail = MountainSerializer(many=True)
     resort_restaurants = RestaurantSerializer(many=True)
-    # owner = UserSerializer(many=True)
+    owner = UserSerializer(many=True)

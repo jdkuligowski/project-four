@@ -45,33 +45,33 @@ const Home = () => {
           return ( */}
         <section className='top-section'>
           <div className='intro-content'>
-            <h1>{languages ? languageState === 'english' ? languages[0].english : languageState === 'french' ? languages[0].french : languages[0].german : '' }</h1>
-            <h4>{languages ? languageState === 'english' ? languages[1].english : languageState === 'french' ? languages[1].french : languages[1].german : '' }</h4>
+            <h1>{languages ? languageState === 'english' ? languages[0].english : languageState === 'french' ? languages[0].french : languageState === 'german' ? languages[0].german : languages[0].english : '' }</h1>
+            <h4>{languages ? languageState === 'english' ? languages[1].english : languageState === 'french' ? languages[1].french : languageState === 'german' ? languages[1].german : languages[1].english : '' }</h4>
             {/* <h4>{languageState === 'english' ? l.english : '' }</h4> */}
             <div className='features'>
               <div className='feature'>
                 <div className='icon-container'>
                   <img src="/project-images/ski_2.png" alt="" />
                 </div>
-                <h2>{languages ? languageState === 'english' ? languages[2].english : languageState === 'french' ? languages[2].french : languages[2].german : '' } </h2>
-                <p>{languages ? languageState === 'english' ? languages[5].english : languageState === 'french' ? languages[5].french : languages[5].german : '' }</p>
+                <h2>{languages ? languageState === 'english' ? languages[2].english : languageState === 'french' ? languages[2].french : languageState === 'german' ? languages[2].german : languages[2].english : ''} </h2>
+                <p>{languages ? languageState === 'english' ? languages[5].english : languageState === 'french' ? languages[5].french : languageState === 'german' ? languages[5].german : languages[5].english : '' }</p>
               </div>
               <div className='feature'>
                 <div className='icon-container'>
                   <img src="/project-images/ski.png" alt="" />
                 </div>
-                <h2>{languages ? languageState === 'english' ? languages[3].english : languageState === 'french' ? languages[3].french : languages[3].german : '' }</h2>
-                <p>{languages ? languageState === 'english' ? languages[7].english : languageState === 'french' ? languages[7].french : languages[7].german : '' }</p>
+                <h2>{languages ? languageState === 'english' ? languages[3].english : languageState === 'french' ? languages[3].french : languageState === 'german' ? languages[3].german : languages[3].english : '' }</h2>
+                <p>{languages ? languageState === 'english' ? languages[7].english : languageState === 'french' ? languages[7].french : languageState === 'german' ? languages[7].german : languages[7].english : '' }</p>
               </div>
               <div className='feature'>
                 <div className='icon-container'>
                   <img src="/project-images/fork.png" alt="icon" />
                 </div>
-                <h2>{languages ? languageState === 'english' ? languages[4].english : languageState === 'french' ? languages[4].french : languages[4].german : '' }</h2>
-                <p>{languages ? languageState === 'english' ? languages[8].english : languageState === 'french' ? languages[8].french : languages[8].german : '' }</p>
+                <h2>{languages ? languageState === 'english' ? languages[4].english : languageState === 'french' ? languages[4].french : languageState === 'german' ? languages[4].german : languages[4].english : '' }</h2>
+                <p>{languages ? languageState === 'english' ? languages[8].english : languageState === 'french' ? languages[8].french : languageState === 'german' ? languages[8].german : languages[8].english : '' }</p>
               </div>
             </div>
-            <Link to='/resorts'><button>{languages ? languageState === 'english' ? languages[9].english : languageState === 'french' ? languages[9].french : languages[9].german : '' }</button></Link>
+            <Link to='/resorts'><button>{languages ? languageState === 'english' ? languages[9].english : languageState === 'french' ? languages[9].french : languageState === 'german' ? languages[9].german : languages[9].english : '' }</button></Link>
           </div>
         </section>
         {/* )

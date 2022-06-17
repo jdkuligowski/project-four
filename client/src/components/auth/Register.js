@@ -79,18 +79,18 @@ const Register = () => {
     <section className='login-page'>
       <section className='register-content'>
         <form className='form-detail' onSubmit={handleSubmit} >
-          <h1>{languages ? languageState === 'english' ? languages[28].english : languageState === 'french' ? languages[28].french : languages[28].german : '' }</h1>
-          <p>{languages ? languageState === 'english' ? languages[29].english : languageState === 'french' ? languages[29].french : languages[29].german : '' }</p>
+          <h1>{languages ? languageState === 'english' ? languages[28].english : languageState === 'french' ? languages[28].french : languageState === 'german' ? languages[28].german : languages[28].english : ''}</h1>
+          <p>{languages ? languageState === 'english' ? languages[29].english : languageState === 'french' ? languages[29].french : languageState === 'german' ? languages[29].german : languages[29].english : ''}</p>
           <hr />
           {/* First_name */}
           <label htmlFor='first_name'></label>
-          <input type='text' name='first_name' className='input' placeholder={languages ? languageState === 'english' ? languages[30].english : languageState === 'french' ? languages[30].french : languages[30].german : '' } value={formData.first_name} onChange={handleChange} />
+          <input type='text' name='first_name' className='input' placeholder={languages ? languageState === 'english' ? languages[30].english : languageState === 'french' ? languages[30].french : languageState === 'german' ? languages[30].german : languages[30].english : ''} value={formData.first_name} onChange={handleChange} />
           {/* Last name */}
           <label htmlFor='last_name'></label>
-          <input type='text' name='last_name' className='input' placeholder={languages ? languageState === 'english' ? languages[31].english : languageState === 'french' ? languages[31].french : languages[31].german : '' } value={formData.last_name} onChange={handleChange} />
+          <input type='text' name='last_name' className='input' placeholder={languages ? languageState === 'english' ? languages[31].english : languageState === 'french' ? languages[31].french : languageState === 'german' ? languages[31].german : languages[31].english : ''} value={formData.last_name} onChange={handleChange} />
           {/* Username */}
           <label htmlFor='username'></label>
-          <input type='text' name='username' className='input' placeholder={languages ? languageState === 'english' ? languages[34].english : languageState === 'french' ? languages[34].french : languages[34].german : '' } value={formData.username} onChange={handleChange} />
+          <input type='text' name='username' className='input' placeholder={languages ? languageState === 'english' ? languages[34].english : languageState === 'french' ? languages[34].french : languageState === 'german' ? languages[34].german : languages[34].english : ''} value={formData.username} onChange={handleChange} />
           {/* {errors && <p className = 'denied-text'>Please input username</p>} */}
           {/* Email */}
           <label htmlFor='email'></label>
@@ -98,14 +98,14 @@ const Register = () => {
           {/* {errors && <p className = 'denied-text'>Please input email</p>} */}
           {/* Password */}
           <label htmlFor='password'></label>
-          <input type='password' name='password' className='input' placeholder={languages ? languageState === 'english' ? languages[23].english : languageState === 'french' ? languages[23].french : languages[23].german : '' }value={formData.password} onChange={handleChange} />
+          <input type='password' name='password' className='input' placeholder={languages ? languageState === 'english' ? languages[23].english : languageState === 'french' ? languages[23].french : languageState === 'german' ? languages[23].german : languages[23].english : ''}value={formData.password} onChange={handleChange} />
           {/* {errors && <p className = 'denied-text'>Please input password</p>} */}
           {/* Password Confirmation */}
           <label htmlFor='passwordConfirmation'></label>
-          <input type='password' name='passwordConfirmation' className='input' placeholder={languages ? languageState === 'english' ? languages[32].english : languageState === 'french' ? languages[32].french : languages[32].german : '' }value={formData.passwordConfirmation} onChange={handleChange} />
+          <input type='password' name='passwordConfirmation' className='input' placeholder={languages ? languageState === 'english' ? languages[32].english : languageState === 'french' ? languages[32].french : languageState === 'german' ? languages[32].german : languages[32].english : ''}value={formData.passwordConfirmation} onChange={handleChange} />
           {/* Submit */}
           <hr/>
-          <button type='submit'>{languages ? languageState === 'english' ? languages[33].english : languageState === 'french' ? languages[33].french : languages[33].german : '' }</button>
+          <button type='submit'>{languages ? languageState === 'english' ? languages[33].english : languageState === 'french' ? languages[33].french : languageState === 'german' ? languages[33].german : languages[33].english : ''}</button>
         </form>
       </section>
     </section>

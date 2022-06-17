@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal'
 // import { Modal } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import FormGroup from 'react-bootstrap/esm/FormGroup'
-
+import { isUserAuth } from '../auth/Auth'
 
 const SkiSelectorTool = () => {
 
@@ -186,11 +186,13 @@ const SkiSelectorTool = () => {
             <h1>Ski Selector</h1>
           </div>
           <div className='selector-overview'>
-            <p>{languages ? languageState === 'english' ? languages[47].english : languageState === 'french' ? languages[47].french : languages[47].german : ''}
+            <p>{languages ? languageState === 'english' ? languages[47].english : languageState === 'french' ? languages[47].french : languageState === 'german' ? languages[47].german : languages[47].english : ''}
             </p>
           </div>
           <div className='access-buttons'>
-            <button className='modal-launch' onClick={handleShow} data-toggle='modal'>{languages ? languageState === 'english' ? languages[48].english : languageState === 'french' ? languages[48].french : languages[48].german : ''}</button>
+            {/* {!isUserAuth() ?
+            <button className='modal-launch' onClick={navigate('/login')}></button> : */}
+            <button className='modal-launch' onClick={handleShow} data-toggle='modal'>{languages ? languageState === 'english' ? languages[48].english : languageState === 'french' ? languages[48].french : languageState === 'german' ? languages[48].german : languages[48].english : ''}</button>
 
             {/* Ski Selector tool section - modal will pop up */}
 
@@ -202,12 +204,12 @@ const SkiSelectorTool = () => {
 
               <Modal.Body>
                 <div className='modal-explanation'>
-                  {languages ? languageState === 'english' ? languages[57].english : languageState === 'french' ? languages[57].french : languages[57].german : ''}
+                  {languages ? languageState === 'english' ? languages[57].english : languageState === 'french' ? languages[57].french : languageState === 'german' ? languages[57].german : languages[57].english : ''}
                 </div>
                 <hr />
                 <Form>
                   <Form.Group className="car-check" controlId="exampleForm.ControlInput1">
-                    <Form.Label>{languages ? languageState === 'english' ? languages[58].english : languageState === 'french' ? languages[58].french : languages[58].german : ''}</Form.Label>
+                    <Form.Label>{languages ? languageState === 'english' ? languages[58].english : languageState === 'french' ? languages[58].french : languageState === 'german' ? languages[58].german : languages[58].english : ''}</Form.Label>
                     <Form.Control className='checkbox'
                       type="checkbox"
                       checked={formData.car}
@@ -218,7 +220,7 @@ const SkiSelectorTool = () => {
                   <hr />
                   <div className="form-group-condition">
                     <div>
-                      <label className="label">{languages ? languageState === 'english' ? languages[59].english : languageState === 'french' ? languages[59].french : languages[59].german : ''}</label>
+                      <label className="label">{languages ? languageState === 'english' ? languages[59].english : languageState === 'french' ? languages[59].french : languageState === 'german' ? languages[59].german : languages[59].english : ''}</label>
                     </div>
                     <div className="control">
                       <label className="radio">
@@ -229,7 +231,7 @@ const SkiSelectorTool = () => {
                           onChange={handleChange}
                           checked={formData.conditions === 'blue-bird'}
                         />
-                        {languages ? languageState === 'english' ? languages[60].english : languageState === 'french' ? languages[60].french : languages[60].german : ''}
+                        {languages ? languageState === 'english' ? languages[60].english : languageState === 'french' ? languages[60].french : languageState === 'german' ? languages[60].german : languages[60].english : ''}
                       </label>
                       <label className="radio">
                         <input
@@ -239,7 +241,7 @@ const SkiSelectorTool = () => {
                           onChange={handleChange}
                           checked={formData.conditions === 'overcast'}
                         />
-                        {languages ? languageState === 'english' ? languages[61].english : languageState === 'french' ? languages[61].french : languages[61].german : ''}
+                        {languages ? languageState === 'english' ? languages[61].english : languageState === 'french' ? languages[61].french : languageState === 'german' ? languages[61].german : languages[61].english : ''}
                       </label>
                       <label className="radio">
                         <input
@@ -249,7 +251,7 @@ const SkiSelectorTool = () => {
                           onChange={handleChange}
                           checked={formData.conditions === 'white-out'}
                         />
-                        {languages ? languageState === 'english' ? languages[62].english : languageState === 'french' ? languages[62].french : languages[62].german : ''}
+                        {languages ? languageState === 'english' ? languages[62].english : languageState === 'french' ? languages[62].french : languageState === 'german' ? languages[62].german : languages[62].english : ''}
                       </label>
                     </div>
                     <hr />
@@ -260,7 +262,7 @@ const SkiSelectorTool = () => {
                         className="mb-3"
                         controlId="exampleForm.ControlTextarea1">
                         <div className="form-group">
-                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : ''}</label>
+                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languageState === 'german' ? languages[43].german : languages[43].english : ''}</label>
                           <select className="form-control" id="rating" placeholder='Set location score' onChange={handleChange} name='location' type='int'>
                             <option> --- </option>
                             <option>1</option>
@@ -304,7 +306,7 @@ const SkiSelectorTool = () => {
                         className="mb-3"
                         controlId="exampleForm.ControlTextarea1">
                         <div className="form-group">
-                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : ''}</label>
+                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languageState === 'german' ? languages[44].german : languages[44].english : ''}</label>
                           <select className="form-control" id="rating" placeholder='Set off-piste score' onChange={handleChange} name='offPiste'>
                             <option> --- </option>
                             <option>1</option>
@@ -324,7 +326,7 @@ const SkiSelectorTool = () => {
                         className="mb-3"
                         controlId="exampleForm.ControlTextarea1">
                         <div className="form-group">
-                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : ''}</label>
+                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languageState === 'german' ? languages[45].german : languages[45].english : ''}</label>
                           <select className="form-control" id="rating" placeholder='Set lunch score' onChange={handleChange} name='lunch'>
                             <option> --- </option>
                             <option>1</option>
@@ -347,25 +349,26 @@ const SkiSelectorTool = () => {
               <Modal.Footer className="modal-footer">
                 <Link to={`/resorts/${id}/detail/`}>
                   <button className='modal-save' onClick={handleSubmit}>
-                    {languages ? languageState === 'english' ? languages[63].english : languageState === 'french' ? languages[63].french : languages[63].german : ''}
+                    {languages ? languageState === 'english' ? languages[64].english : languageState === 'french' ? languages[64].french : languageState === 'german' ? languages[64].german : languages[64].english : ''}
+
                   </button>
                 </Link>
                 <button className='modal-save' onClick={saveResults}>
-                  {languages ? languageState === 'english' ? languages[64].english : languageState === 'french' ? languages[64].french : languages[64].german : ''}
+                  {languages ? languageState === 'english' ? languages[63].english : languageState === 'french' ? languages[63].french : languageState === 'german' ? languages[63].german : languages[63].english : ''}
                 </button>
                 <button className='modal-close' onClick={handleClose}>
-                  {languages ? languageState === 'english' ? languages[65].english : languageState === 'french' ? languages[65].french : languages[65].german : ''}
+                  {languages ? languageState === 'english' ? languages[65].english : languageState === 'french' ? languages[65].french : languageState === 'german' ? languages[65].german : languages[65].english : ''}
                 </button>
               </Modal.Footer>
             </Modal>
             <Link to={`/resorts/${id}`}>
-              <button>{languages ? languageState === 'english' ? languages[49].english : languageState === 'french' ? languages[49].french : languages[49].german : ''}</button>
+              <button>{languages ? languageState === 'english' ? languages[49].english : languageState === 'french' ? languages[49].french : languageState === 'german' ? languages[49].german : languages[49].english : ''}</button>
             </Link>
           </div>
         </section>
         <section className='instruction-middle'>
           <div className='selector-detail'>
-            <h3>{languages ? languageState === 'english' ? languages[66].english : languageState === 'french' ? languages[66].french : languages[66].german : ''}</h3>
+            <h3>{languages ? languageState === 'english' ? languages[66].english : languageState === 'french' ? languages[66].french : languageState === 'german' ? languages[66].german : languages[66].english : ''}</h3>
           </div>
         </section>
         <hr />
@@ -376,9 +379,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/car-white.png" alt="transport icon" />
               </div>
               <div className='method-text'>
-                <h4>{languages ? languageState === 'english' ? languages[50].english : languageState === 'french' ? languages[50].french : languages[50].german : ''}</h4>
+                <h4>{languages ? languageState === 'english' ? languages[50].english : languageState === 'french' ? languages[50].french : languageState === 'german' ? languages[50].german : languages[50].english : ''}</h4>
                 <hr />
-                <p>{languages ? languageState === 'english' ? languages[51].english : languageState === 'french' ? languages[51].french : languages[51].german : ''}
+                <p>{languages ? languageState === 'english' ? languages[51].english : languageState === 'french' ? languages[51].french : languageState === 'german' ? languages[51].german : languages[51].english : ''}
                 </p>
               </div>
             </div>
@@ -387,9 +390,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/weather-white.png" alt="weather icon" />
               </div>
               <div className='method-text'>
-                <h4>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : ''}</h4>
+                <h4>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languageState === 'german' ? languages[39].german : languages[39].english : ''}</h4>
                 <hr />
-                <p>{languages ? languageState === 'english' ? languages[52].english : languageState === 'french' ? languages[52].french : languages[52].german : ''}
+                <p>{languages ? languageState === 'english' ? languages[52].english : languageState === 'french' ? languages[52].french : languageState === 'german' ? languages[52].german : languages[52].english : ''}
                 </p>
               </div>
             </div>
@@ -398,9 +401,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/location-white.png" alt="location icon" />
               </div>
               <div className='method-text'>
-                <h4>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : ''}</h4>
+                <h4>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languageState === 'german' ? languages[43].german : languages[43].english : ''}</h4>
                 <hr />
-                <p>{languages ? languageState === 'english' ? languages[53].english : languageState === 'french' ? languages[53].french : languages[53].german : ''}</p>
+                <p>{languages ? languageState === 'english' ? languages[53].english : languageState === 'french' ? languages[53].french : languageState === 'german' ? languages[53].german : languages[53].english : ''}</p>
               </div>
             </div>
             <div className='method-row'>
@@ -410,7 +413,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Piste</h4>
                 <hr />
-                <p>{languages ? languageState === 'english' ? languages[54].english : languageState === 'french' ? languages[54].french : languages[54].german : ''}
+                <p>{languages ? languageState === 'english' ? languages[54].english : languageState === 'french' ? languages[54].french : languageState === 'german' ? languages[54].german : languages[54].english : ''}
                 </p>
               </div>
             </div>
@@ -419,9 +422,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/ski-white-2.png" alt="off piste icon" />
               </div>
               <div className='method-text'>
-                <h4>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : ''}</h4>
+                <h4>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languageState === 'german' ? languages[44].german : languages[44].english : ''}</h4>
                 <hr />
-                <p>{languages ? languageState === 'english' ? languages[55].english : languageState === 'french' ? languages[55].french : languages[55].german : ''}
+                <p>{languages ? languageState === 'english' ? languages[55].english : languageState === 'french' ? languages[55].french : languageState === 'german' ? languages[55].german : languages[55].english : ''}
                 </p>
               </div>
             </div>
@@ -430,9 +433,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/food-white.png" alt="lunch icon" />
               </div>
               <div className='method-text'>
-                <h4>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : ''}</h4>
+                <h4>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languageState === 'german' ? languages[45].german : languages[45].english : ''}</h4>
                 <hr />
-                <p>{languages ? languageState === 'english' ? languages[56].english : languageState === 'french' ? languages[56].french : languages[56].german : ''}
+                <p>{languages ? languageState === 'english' ? languages[56].english : languageState === 'french' ? languages[56].french : languageState === 'german' ? languages[56].german : languages[56].english : ''}
                 </p>
               </div>
             </div>

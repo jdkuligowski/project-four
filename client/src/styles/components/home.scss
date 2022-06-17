@@ -7,7 +7,7 @@
 }
 
 .top-section {
-  height: 93vh;
+  height: 91vh;
   display: flex;
   // align-items: center;
   flex-direction: column;
@@ -22,7 +22,7 @@
     // text-align: center;
     color: #213159; 
     position: absolute;
-    bottom: 5%;
+    bottom: 4%;
     h1 {
       font-size: 3rem;
       margin-top: 0px;
@@ -68,6 +68,8 @@
     color: #e7e7e7;
     background-color: #213159;
     padding: 1%;
+    border-radius: 10px;
+    border: 2px solid #213159;
   }
 }
 

@@ -44,13 +44,6 @@ const ResortDetails = () => {
     getMountains()
   }, [])
 
-  const scrollerFunction = () => {
-    scroller.scrollTo('grid-title', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart',
-    })
-  }
 
   const skiSelector = () => {
     navigate(`/resorts/${id}/selector`)
@@ -75,7 +68,7 @@ const ResortDetails = () => {
 
   const getData = () => {
     window.addEventListener('storage', () => {
-      console.log('change to local storage')
+      // console.log('change to local storage')
       const data = JSON.parse(localStorage.getItem('language-state'))
       console.log('data->', data)
       if (data) setLanguageState(data)
@@ -85,9 +78,8 @@ const ResortDetails = () => {
 
   useEffect(() => {
     getData()
+    // setLanguageState(languageState)
   })
-
-
 
 
   useEffect(() => {
@@ -108,15 +100,15 @@ const ResortDetails = () => {
   return (
     <section className='ski-areas-page'>
       {/* Top section of the page with the image and name of the resort */}
-      <section className="resort-overview" id={resorts.resort}>
+      <section className="resort-overview" id={resorts.resort} style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.6), rgba(245, 246, 252, 0.8)), url('${resorts.resort_image}')` }}>
         <h1>{resorts.resort}</h1>
         <div className='feature-section'>
-          <button onClick={handleBackClick}> 
+          <button onClick={handleBackClick}>
             <div className='feature'>
               <div className='icon-image'>
                 <img src="/project-images/cable-car-cabin.png" alt="icon" />
               </div>
-              <h4>{languages ? languageState === 'english' ? languages[35].english : languageState === 'french' ? languages[35].french : languages[35].german : '' }</h4>
+              <h4>{languages ? languageState === 'english' ? languages[35].english : languageState === 'french' ? languages[35].french : languageState === 'german' ? languages[35].german : languages[35].english : ''}</h4>
             </div>
           </button>
           <button onClick={skiSelector}>
@@ -132,20 +124,20 @@ const ResortDetails = () => {
               <div className='icon-image'>
                 <img src="/project-images/fork.png" alt="icon" />
               </div>
-              <h4>{languages ? languageState === 'english' ? languages[37].english : languageState === 'french' ? languages[37].french : languages[37].german : '' }</h4>
+              <h4>{languages ? languageState === 'english' ? languages[37].english : languageState === 'french' ? languages[37].french : languageState === 'german' ? languages[37].german : languages[37].english : ''}</h4>
             </div>
           </button>
           <div className='feature'>
             <div className='icon-image'>
               <img src="/project-images/ski_2.png" alt="icon" />
             </div>
-            <h4>{languages ? languageState === 'english' ? languages[38].english : languageState === 'french' ? languages[38].french : languages[38].german : '' }</h4>
+            <h4>{languages ? languageState === 'english' ? languages[38].english : languageState === 'french' ? languages[38].french : languageState === 'german' ? languages[38].german : languages[38].english : ''}</h4>
           </div>
           <div className='feature'>
             <div className='icon-image'>
               <img src="/project-images/morning-snow.png" alt="icon" />
             </div>
-            <h4>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : '' }</h4>
+            <h4>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languageState === 'german' ? languages[39].german : languages[39].english : ''}</h4>
           </div>
         </div>
         {/* Banner at the bottom of the image showing the key stats from the resort */}
@@ -174,7 +166,7 @@ const ResortDetails = () => {
                 .
               </div>
             </div>
-            <h4>{resorts.beginner} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languages[19].german : '' }</h4>
+            <h4>{resorts.beginner} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languageState === 'german' ? languages[19].german : languages[19].english : ''}</h4>
           </div>
           <div className='resort-summary'>
             <div className='colour-icon'>
@@ -182,7 +174,7 @@ const ResortDetails = () => {
                 .
               </div>
             </div>
-            <h4>{resorts.intermediate} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languages[18].german : '' }</h4>
+            <h4>{resorts.intermediate} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languageState === 'german' ? languages[18].german : languages[18].english : ''}</h4>
           </div>
           <div className='resort-summary'>
             <div className='colour-icon'>
@@ -190,14 +182,14 @@ const ResortDetails = () => {
                 .
               </div>
             </div>
-            <h4>{resorts.expert} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languages[17].german : '' }</h4>
+            <h4>{resorts.expert} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languageState === 'german' ? languages[17].german : languages[17].english : ''}</h4>
           </div>
         </div>
       </section>
       {errors ? 'Sorry can\'t load' :
         <section className="mountain-details">
 
-          <h2 className='grid-title' ref={buttonRef}>{mountains.length} {languages ? languageState === 'english' ? languages[40].english : languageState === 'french' ? languages[40].french : languages[40].german : '' } {resorts.resort}</h2>
+          <h2 className='grid-title' ref={buttonRef}>{mountains.length} {languages ? languageState === 'english' ? languages[40].english : languageState === 'french' ? languages[40].french : languageState === 'german' ? languages[40].german : languages[40].english : ''} {resorts.resort}</h2>
           <hr />
           <div className="resort-grid">
             {mountains.map(m => {
@@ -215,7 +207,7 @@ const ResortDetails = () => {
                               .
                             </div>
                           </div>
-                          <h4>{m.blue_runs} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languages[19].german : '' }</h4>
+                          <h4>{m.blue_runs} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languageState === 'german' ? languages[19].german : languages[19].english : '' }</h4>
                         </div>
                         <div className='mountain-summary'>
                           <div className='colour-icon'>
@@ -223,7 +215,7 @@ const ResortDetails = () => {
                               .
                             </div>
                           </div>
-                          <h4>{m.red_runs} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languages[18].german : '' }</h4>
+                          <h4>{m.red_runs} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languageState === 'german' ? languages[18].german : languages[18].english : ''}</h4>
                         </div>
                         <div className='mountain-summary'>
                           <div className='colour-icon'>
@@ -231,7 +223,7 @@ const ResortDetails = () => {
                               .
                             </div>
                           </div>
-                          <h4>{m.black_runs} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languages[17].german : '' }</h4>
+                          <h4>{m.black_runs} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languageState === 'german' ? languages[17].german : languages[17].english : ''}</h4>
                         </div>
                       </div>
                     </div>
@@ -240,7 +232,7 @@ const ResortDetails = () => {
                       <h4>{m.other}</h4>
                       <hr />
                       <div className='resort-buttons'>
-                        <button className='piste-map-btn' onClick={modalShow}>{languages ? languageState === 'english' ? languages[41].english : languageState === 'french' ? languages[41].french : languages[41].german : '' }</button>
+                        <button className='piste-map-btn' onClick={modalShow}>{languages ? languageState === 'english' ? languages[41].english : languageState === 'french' ? languages[41].french : languageState === 'german' ? languages[41].german : languages[41].english : '' }</button>
                         {/* <Modal show={show} onHide={modalClose} backdrop='static' className='piste-map-modal'>
                           <Modal.Body className='piste-map-body'>
                             <div className='modal-image-container'>
@@ -248,7 +240,7 @@ const ResortDetails = () => {
                             </div>
                           </Modal.Body>
                         </Modal> */}
-                        <button>{languages ? languageState === 'english' ? languages[42].english : languageState === 'french' ? languages[42].french : languages[42].german : '' }</button>
+                        <button>{languages ? languageState === 'english' ? languages[42].english : languageState === 'french' ? languages[42].french : languageState === 'german' ? languages[42].german : languages[42].english : ''}</button>
                       </div>
                       <hr />
                       <div className='resort-ratings'>
@@ -257,7 +249,7 @@ const ResortDetails = () => {
                             <img src="/project-images/location.png" alt="location icon" />
                           </div>
                           <div className="rating-name">
-                            <h5>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : '' }</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languageState === 'german' ? languages[43].german : languages[43].english : '' }</h5>
                           </div>
                           <div className="rating-detail">
                             <div className='star-array'>
@@ -269,7 +261,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{languages ? languageState === 'english' ? m.location_car : languageState === 'french' ? m.location_car_fr : m.location_car_de : '' }</p>
+                            <p>{languages ? languageState === 'english' ? m.location_car : languageState === 'french' ? m.location_car_fr : languageState === 'german' ? m.location_car_de : m.location_car : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -289,7 +281,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{languages ? languageState === 'english' ? m.piste : languageState === 'french' ? m.piste_fr : m.piste_de : ''}</p>
+                            <p>{languages ? languageState === 'english' ? m.piste : languageState === 'french' ? m.piste_fr : languageState === 'german' ? m.piste_de : m.piste : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -297,7 +289,7 @@ const ResortDetails = () => {
                             <img src="/project-images/goggles.png" alt="" />
                           </div>
                           <div className="rating-name">
-                            <h5>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : '' }</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languageState === 'german' ? languages[44].german : languages[44].english : ''}</h5>
                           </div>
                           <div className="rating-detail">
                             <div className='star-array'>
@@ -309,7 +301,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{languages ? languageState === 'english' ? m.off_piste : languageState === 'french' ? m.off_piste_fr : m.off_piste_de : ''}</p>
+                            <p>{languages ? languageState === 'english' ? m.off_piste : languageState === 'french' ? m.off_piste_fr : languageState === 'german' ? m.off_piste_de : m.off_piste : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -317,7 +309,7 @@ const ResortDetails = () => {
                             <img src="/project-images/restaurant.png" alt="" />
                           </div>
                           <div className="rating-name">
-                            <h5>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : '' }</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languageState === 'german' ? languages[45].german : languages[45].english : ''}</h5>
                           </div>
                           <div className="rating-detail">
                             <div className='star-array'>
@@ -329,7 +321,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{languages ? languageState === 'english' ? m.lunch : languageState === 'french' ? m.lunch_fr : m.lunch_de : ''}</p>
+                            <p>{languages ? languageState === 'english' ? m.lunch : languageState === 'french' ? m.lunch_fr : languageState === 'german' ? m.lunch_de : m.lunch : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -337,11 +329,11 @@ const ResortDetails = () => {
                             <img src="/project-images/morning-snow.png" alt="" />
                           </div>
                           <div className="rating-name">
-                            <h5>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : '' }</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languageState === 'german' ? languages[39].german : languages[39].english : ''}</h5>
                           </div>
                           <div className="rating-detail">
 
-                            <p>{languages ? languageState === 'english' ? m.weather_comment : languageState === 'french' ? m.weather_comment_fr : m.weather_comment_de : ''}</p>
+                            <p>{languages ? languageState === 'english' ? m.weather_comment : languageState === 'french' ? m.weather_comment_fr : languageState === 'german' ? m.weather_comment_de : m.weather_comment : ''}</p>
                           </div>
                         </div>
                       </div>

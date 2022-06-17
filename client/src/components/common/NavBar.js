@@ -41,7 +41,7 @@ const NavBar = () => {
   }
 
   const handleChange2 = e => {
-    // setLanguageToLocalStorage()
+    setLanguageToLocalStorage()
   }
 
   const setLanguageToLocalStorage = (token) => {
@@ -88,7 +88,7 @@ const NavBar = () => {
                     </>
                   }
                   <select onChange={handleChange} onPointerMove={handleChange2}>
-                    <option value='english'><p>🇬🇧</p></option>
+                    <option value='english'>🇬🇧</option>
                     <option value='french'>🇫🇷</option>
                     <option value='german'>🇩🇪</option>
                   </select>

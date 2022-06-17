@@ -28,7 +28,7 @@ const Login = () => {
       //console.log(data.token)
       console.log({ data })
       window.localStorage.setItem('skiAgent-username', formData.email)
-      navigate('/')
+      navigate('/resorts')
     } catch (error) {
       setErrors(true)
     }
@@ -75,30 +75,30 @@ const Login = () => {
       <section className='login-content'>
         <section className='form-section'>
           <form className='form-detail' onSubmit={handleSubmit}>
-            <div className ='icon'>
-              <img src="/project-images/cable-car-cabin.png" alt='logo'/>
+            <div className='icon'>
+              <img src="/project-images/cable-car-cabin.png" alt='logo' />
             </div>
             <h1>Ski Agent</h1>
-            <p>{languages ? languageState === 'english' ? languages[22].english : languageState === 'french' ? languages[22].french : languages[22].german : '' }</p>
+            <p>{languages ? languageState === 'english' ? languages[22].english : languageState === 'french' ? languages[22].french : languageState === 'german' ? languages[22].german : languages[22].english : ''}</p>
             <hr />
             {/* Email */}
             <label htmlFor='email'></label>
             <input type='email' name='email' className='input' placeholder='Email' value={formData.email} onChange={handleChange} />
             {/* Password */}
             <label htmlFor='password'></label>
-            <input type='password' name='password' className='input' placeholder={languages ? languageState === 'english' ? languages[23].english : languageState === 'french' ? languages[23].french : languages[23].german : '' } value={formData.password} onChange={handleChange} />
+            <input type='password' name='password' className='input' placeholder={languages ? languageState === 'english' ? languages[23].english : languageState === 'german' ? languageState === 'french' ? languages[23].french : languages[23].german : languages[23].english : ''} value={formData.password} onChange={handleChange} />
             {/* {errors && <p className='denied-text'>Please enter the correct login details</p>} */}
             {/* Submit */}
-            <button  className = 'sign-up' type='submit'>{languages ? languageState === 'english' ? languages[24].english : languageState === 'french' ? languages[24].french : languages[24].german : '' }</button>
-            <h5>{languages ? languageState === 'english' ? languages[25].english : languageState === 'french' ? languages[25].french : languages[25].german : '' }<Link to={'/register'}>
-              <span>{languages ? languageState === 'english' ? languages[46].english : languageState === 'french' ? languages[46].french : languages[46].german : '' }</span></Link> </h5>
+            <button className='sign-up' type='submit'>{languages ? languageState === 'english' ? languages[24].english : languageState === 'french' ? languages[24].french : languageState === 'german' ? languages[24].german : languages[24].english : ''}</button>
+            <h5>{languages ? languageState === 'english' ? languages[25].english : languageState === 'french' ? languages[25].french : languageState === 'german' ? languages[25].german : languages[25].english : ''}<Link to={'/register'}>
+              <span>{languages ? languageState === 'english' ? languages[46].english : languageState === 'french' ? languages[46].french : languageState === 'german' ? languages[46].german : languages[46].english : ''}</span></Link> </h5>
             {/* <button className = 'sign-in'>Sign up</button> */}
           </form>
         </section>
         <section className='login-overview'>
-          <h1>{languages ? languageState === 'english' ? languages[26].english : languageState === 'french' ? languages[26].french : languages[26].german : '' }</h1>
-          <h1>{languages ? languageState === 'english' ? languages[27].english : languageState === 'french' ? languages[27].french : languages[27].german : '' }</h1>
-          <Link to={'/register'}><button>{languages ? languageState === 'english' ? languages[28].english : languageState === 'french' ? languages[28].french : languages[29].german : '' }</button></Link>
+          <h1>{languages ? languageState === 'english' ? languages[26].english : languageState === 'french' ? languages[26].french : languageState === 'german' ? languages[26].german : languages[26].english : ''}</h1>
+          <h1>{languages ? languageState === 'english' ? languages[27].english : languageState === 'french' ? languages[27].french : languageState === 'german' ? languages[27].german : languages[27].english : ''}</h1>
+          <Link to={'/register'}><button>{languages ? languageState === 'english' ? languages[28].english : languageState === 'french' ? languages[28].french : languageState === 'german' ? languages[29].german : languages[28].english : ''}</button></Link>
         </section>
       </section>
     </section>

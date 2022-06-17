@@ -14,7 +14,7 @@ export const getPayLoad = () => {
 
 export const isUserAuth = () => {
   const payLoad = getPayLoad()
-  if (!payLoad) return 
+  if (!payLoad) return false
   const currentTime = Math.floor(Date.now() / 1000)
   return payLoad.exp > currentTime
 }
@@ -23,8 +23,8 @@ export const isUserOwner = (resort) => {
   const payLoad = getPayLoad()
   if (!payLoad) return
   console.log(payLoad.sub)
-  console.log(resort.owner)
-  return resort.owner === payLoad.sub
+  console.log(resort.owner._id)
+  return resort.owner._id === payLoad.sub
 }
 
 
