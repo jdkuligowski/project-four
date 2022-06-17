@@ -65,6 +65,36 @@ const SkiSelectorTool = () => {
   }, [resorts])
 
 
+  const [languages, setLanguagesData] = useState()
+
+  const [languageState, setLanguageState] = useState([])
+
+  const getData = () => {
+    window.addEventListener('storage', () => {
+      console.log('change to local storage')
+      const data = JSON.parse(localStorage.getItem('language-state'))
+      console.log('data->', data)
+      if (data) setLanguageState(data)
+      console.log('current language ->', languageState)
+    })
+  }
+
+  useEffect(() => {
+    getData()
+  })
+
+
+
+
+  useEffect(() => {
+    const getLanguages = async () => {
+      const { data } = await axios.get('/api/language/')
+      setLanguagesData(data)
+      console.log('language dataset ->', data)
+    }
+    getLanguages()
+  }, [])
+
 
 
   const calculation = () => {
@@ -73,57 +103,70 @@ const SkiSelectorTool = () => {
         if (formData.conditions === 'blue-bird') {
           if (formData.car) {
             return {
-              ...resort, percentages: parseFloat(((formData.location * resort.car_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.blue_bird_score * 20)) / 500).toFixed(3),
+              ...resort, percentages: (parseFloat(((formData.location * resort.car_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.blue_bird_score * 20)) / 500) * 100).toFixed(0),
+              lunchInput: parseInt(formData.lunch), locationInput: parseInt(formData.location), pisteInput: parseInt(formData.piste), offPisteInput: parseInt(formData.offPiste), carInput: formData.car,
             }
           } else {
             return {
-              ...resort, percentages: parseFloat(((formData.location * resort.bus_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.blue_bird_score * 20)) / 500).toFixed(3),
+              ...resort, percentages: (parseFloat(((formData.location * resort.bus_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.blue_bird_score * 20)) / 500) * 100).toFixed(0),
+              lunchInput: parseInt(formData.lunch), locationInput: parseInt(formData.location), pisteInput: parseInt(formData.piste), offPisteInput: parseInt(formData.offPiste), carInput: formData.car,
             }
           }
         } else if (formData.conditions === 'overcast') {
           if (formData.car) {
             return {
-              ...resort, percentages: parseFloat(((formData.location * resort.car_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.overcast_score * 20)) / 500).toFixed(3),
+              ...resort, percentages: (parseFloat(((formData.location * resort.car_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.overcast_score * 20)) / 500) * 100).toFixed(0),
+              lunchInput: parseInt(formData.lunch), locationInput: parseInt(formData.location), pisteInput: parseInt(formData.piste), offPisteInput: parseInt(formData.offPiste), carInput: formData.car,
             }
           } else {
             return {
-              ...resort, percentages: parseFloat(((formData.location * resort.bus_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.overcast_score * 20)) / 500).toFixed(3),
+              ...resort, percentages: (parseFloat(((formData.location * resort.bus_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.overcast_score * 20)) / 500) * 100).toFixed(0),
+              lunchInput: parseInt(formData.lunch), locationInput: parseInt(formData.location), pisteInput: parseInt(formData.piste), offPisteInput: parseInt(formData.offPiste), carInput: formData.car,
             }
           }
         } else if (formData.conditions === 'white-out') {
           if (formData.car) {
             return {
-              ...resort, percentages: parseFloat(((formData.location * resort.car_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.white_out_score * 20)) / 500).toFixed(3),
+              ...resort, percentages: (parseFloat(((formData.location * resort.car_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.white_out_score * 20)) / 500) * 100).toFixed(0),
+              lunchInput: parseInt(formData.lunch), locationInput: parseInt(formData.location), pisteInput: parseInt(formData.piste), offPisteInput: parseInt(formData.offPiste), carInput: formData.car,
             }
           } else {
             return {
-              ...resort, percentages: parseFloat(((formData.location * resort.bus_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.white_out_score * 20)) / 500).toFixed(3),
+              ...resort, percentages: (parseFloat(((formData.location * resort.bus_score) + (formData.piste * resort.piste_score) + (formData.piste * resort.off_piste_score) + (formData.lunch * resort.lunch_score) + (resort.white_out_score * 20)) / 500) * 100).toFixed(0),
+              lunchInput: parseInt(formData.lunch), locationInput: parseInt(formData.location), pisteInput: parseInt(formData.piste), offPisteInput: parseInt(formData.offPiste), carInput: formData.car,
             }
           }
         }
       }).sort((a, b) => b.percentages - a.percentages)
-    console.log('new array ->', calculation)
+    console.log('calculated array ->', calculation)
     setResorts(calculation)
   }
 
   const setStateToLocalStorage = (token) => {
     window.localStorage.setItem('ski-selector-data', JSON.stringify(resorts))
-    window.localStorage.setItem('ski-selector-choices', JSON.stringify(formData))
+    window.localStorage.setItem('ski-selector-choices', JSON.stringify([formData]))
+    window.localStorage.setItem('ski-selector-location', JSON.stringify(parseInt(formData.location)))
+    window.localStorage.setItem('ski-selector-lunch', JSON.stringify(parseInt(formData.lunch)))
+    window.localStorage.setItem('ski-selector-piste', JSON.stringify(parseInt(formData.piste)))
+    window.localStorage.setItem('ski-selector-off-piste', JSON.stringify(parseInt(formData.offPiste)))
+    // window.localStorage.setItem('ski-selector-location', JSON.stringify(formData.location))
+
   }
 
   const removeStateFromStorage = () => {
     window.localStorage.removeItem('ski-selector-data')
   }
 
-  // const saveResults = (e) => {
-  //   e.preventDefault()
-
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     removeStateFromStorage()
     calculation()
+    // navigate(`/resorts/${id}/detail`)
+  }
+
+  const saveResults = () => {
+    navigate(`/resorts/${id}/personal`)
   }
 
   // Setting state and handles for add comment modal
@@ -143,14 +186,11 @@ const SkiSelectorTool = () => {
             <h1>Ski Selector</h1>
           </div>
           <div className='selector-overview'>
-            <p>Where you want to ski on a particular day can be
-              massively impacted by the conditions and how you&apos;re feeling.
-              Ski selector helps with this. Just add your inputs for the 6 dimensions below
-              and we&apos;ll find the best spot for you to ski.
+            <p>{languages ? languageState === 'english' ? languages[47].english : languageState === 'french' ? languages[47].french : languages[47].german : ''}
             </p>
           </div>
           <div className='access-buttons'>
-            <button className='modal-launch' onClick={handleShow} data-toggle='modal'>Use the tool</button>
+            <button className='modal-launch' onClick={handleShow} data-toggle='modal'>{languages ? languageState === 'english' ? languages[48].english : languageState === 'french' ? languages[48].french : languages[48].german : ''}</button>
 
             {/* Ski Selector tool section - modal will pop up */}
 
@@ -162,13 +202,13 @@ const SkiSelectorTool = () => {
 
               <Modal.Body>
                 <div className='modal-explanation'>
-                  Input your values below
+                  {languages ? languageState === 'english' ? languages[57].english : languageState === 'french' ? languages[57].french : languages[57].german : ''}
                 </div>
                 <hr />
                 <Form>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Do you have a car?</Form.Label>
-                    <Form.Control
+                  <Form.Group className="car-check" controlId="exampleForm.ControlInput1">
+                    <Form.Label>{languages ? languageState === 'english' ? languages[58].english : languageState === 'french' ? languages[58].french : languages[58].german : ''}</Form.Label>
+                    <Form.Control className='checkbox'
                       type="checkbox"
                       checked={formData.car}
                       autoFocus
@@ -178,7 +218,7 @@ const SkiSelectorTool = () => {
                   <hr />
                   <div className="form-group-condition">
                     <div>
-                      <label className="label">What are the conditions?</label>
+                      <label className="label">{languages ? languageState === 'english' ? languages[59].english : languageState === 'french' ? languages[59].french : languages[59].german : ''}</label>
                     </div>
                     <div className="control">
                       <label className="radio">
@@ -189,7 +229,7 @@ const SkiSelectorTool = () => {
                           onChange={handleChange}
                           checked={formData.conditions === 'blue-bird'}
                         />
-                        Blue Bird
+                        {languages ? languageState === 'english' ? languages[60].english : languageState === 'french' ? languages[60].french : languages[60].german : ''}
                       </label>
                       <label className="radio">
                         <input
@@ -199,7 +239,7 @@ const SkiSelectorTool = () => {
                           onChange={handleChange}
                           checked={formData.conditions === 'overcast'}
                         />
-                        Overcast
+                        {languages ? languageState === 'english' ? languages[61].english : languageState === 'french' ? languages[61].french : languages[61].german : ''}
                       </label>
                       <label className="radio">
                         <input
@@ -209,7 +249,7 @@ const SkiSelectorTool = () => {
                           onChange={handleChange}
                           checked={formData.conditions === 'white-out'}
                         />
-                        White Out
+                        {languages ? languageState === 'english' ? languages[62].english : languageState === 'french' ? languages[62].french : languages[62].german : ''}
                       </label>
                     </div>
                     <hr />
@@ -220,8 +260,8 @@ const SkiSelectorTool = () => {
                         className="mb-3"
                         controlId="exampleForm.ControlTextarea1">
                         <div className="form-group">
-                          <label htmlFor="rating" className='rating-labels'>Location</label>
-                          <select className="form-control" id="rating" placeholder='Set location score' onChange={handleChange} name='location'>
+                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : ''}</label>
+                          <select className="form-control" id="rating" placeholder='Set location score' onChange={handleChange} name='location' type='int'>
                             <option> --- </option>
                             <option>1</option>
                             <option>2</option>
@@ -264,7 +304,7 @@ const SkiSelectorTool = () => {
                         className="mb-3"
                         controlId="exampleForm.ControlTextarea1">
                         <div className="form-group">
-                          <label htmlFor="rating" className='rating-labels'>Off piste</label>
+                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : ''}</label>
                           <select className="form-control" id="rating" placeholder='Set off-piste score' onChange={handleChange} name='offPiste'>
                             <option> --- </option>
                             <option>1</option>
@@ -284,7 +324,7 @@ const SkiSelectorTool = () => {
                         className="mb-3"
                         controlId="exampleForm.ControlTextarea1">
                         <div className="form-group">
-                          <label htmlFor="rating" className='rating-labels'>Lunch</label>
+                          <label htmlFor="rating" className='rating-labels'>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : ''}</label>
                           <select className="form-control" id="rating" placeholder='Set lunch score' onChange={handleChange} name='lunch'>
                             <option> --- </option>
                             <option>1</option>
@@ -303,30 +343,29 @@ const SkiSelectorTool = () => {
                     </div>
                   </div>
                 </Form>
-                <hr />
               </Modal.Body>
               <Modal.Footer className="modal-footer">
                 <Link to={`/resorts/${id}/detail/`}>
                   <button className='modal-save' onClick={handleSubmit}>
-                    Get results
+                    {languages ? languageState === 'english' ? languages[63].english : languageState === 'french' ? languages[63].french : languages[63].german : ''}
                   </button>
                 </Link>
-                {/* <button className='modal-save' onClick={saveResults}>
-                  Save results
-                </button> */}
+                <button className='modal-save' onClick={saveResults}>
+                  {languages ? languageState === 'english' ? languages[64].english : languageState === 'french' ? languages[64].french : languages[64].german : ''}
+                </button>
                 <button className='modal-close' onClick={handleClose}>
-                  Close
+                  {languages ? languageState === 'english' ? languages[65].english : languageState === 'french' ? languages[65].french : languages[65].german : ''}
                 </button>
               </Modal.Footer>
             </Modal>
-            <Link to={`/resorts/${id}/overview`}>
-              <button>Show me the list</button>
+            <Link to={`/resorts/${id}`}>
+              <button>{languages ? languageState === 'english' ? languages[49].english : languageState === 'french' ? languages[49].french : languages[49].german : ''}</button>
             </Link>
           </div>
         </section>
         <section className='instruction-middle'>
           <div className='selector-detail'>
-            <h3>How it works</h3>
+            <h3>{languages ? languageState === 'english' ? languages[66].english : languageState === 'french' ? languages[66].french : languages[66].german : ''}</h3>
           </div>
         </section>
         <hr />
@@ -337,9 +376,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/car-white.png" alt="transport icon" />
               </div>
               <div className='method-text'>
-                <h4>Transport</h4>
+                <h4>{languages ? languageState === 'english' ? languages[50].english : languageState === 'french' ? languages[50].french : languages[50].german : ''}</h4>
                 <hr />
-                <p>Do you have a car to help you get around?
+                <p>{languages ? languageState === 'english' ? languages[51].english : languageState === 'french' ? languages[51].french : languages[51].german : ''}
                 </p>
               </div>
             </div>
@@ -348,9 +387,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/weather-white.png" alt="weather icon" />
               </div>
               <div className='method-text'>
-                <h4>Weather</h4>
+                <h4>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : ''}</h4>
                 <hr />
-                <p>What are the current conditions?
+                <p>{languages ? languageState === 'english' ? languages[52].english : languageState === 'french' ? languages[52].french : languages[52].german : ''}
                 </p>
               </div>
             </div>
@@ -359,10 +398,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/location-white.png" alt="location icon" />
               </div>
               <div className='method-text'>
-                <h4>Location</h4>
+                <h4>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : ''}</h4>
                 <hr />
-                <p>How important it proximity to the town?
-                </p>
+                <p>{languages ? languageState === 'english' ? languages[53].english : languageState === 'french' ? languages[53].french : languages[53].german : ''}</p>
               </div>
             </div>
             <div className='method-row'>
@@ -372,7 +410,7 @@ const SkiSelectorTool = () => {
               <div className='method-text'>
                 <h4>Piste</h4>
                 <hr />
-                <p>Are you looking to spend a day on piste?
+                <p>{languages ? languageState === 'english' ? languages[54].english : languageState === 'french' ? languages[54].french : languages[54].german : ''}
                 </p>
               </div>
             </div>
@@ -381,9 +419,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/ski-white-2.png" alt="off piste icon" />
               </div>
               <div className='method-text'>
-                <h4>Off Piste</h4>
+                <h4>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : ''}</h4>
                 <hr />
-                <p>Feeling adventurous?
+                <p>{languages ? languageState === 'english' ? languages[55].english : languageState === 'french' ? languages[55].french : languages[55].german : ''}
                 </p>
               </div>
             </div>
@@ -392,9 +430,9 @@ const SkiSelectorTool = () => {
                 <img src="/project-images/food-white.png" alt="lunch icon" />
               </div>
               <div className='method-text'>
-                <h4>Lunch</h4>
+                <h4>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : ''}</h4>
                 <hr />
-                <p>Do you want a nice spot to eat?
+                <p>{languages ? languageState === 'english' ? languages[56].english : languageState === 'french' ? languages[56].french : languages[56].german : ''}
                 </p>
               </div>
             </div>

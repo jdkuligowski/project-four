@@ -1,0 +1,111 @@
+.login-page {
+  background-color: #213159;
+  height: 90vh;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  .login-content {
+    
+    width: 80%;
+    // margin: 5%;
+    display: flex;
+    height: 80%;
+    box-shadow:  0px 0px 20px white;
+    .form-section{
+      width: 45%;
+      background-color: white;
+      color: #213159;
+      display: flex;
+      justify-content: center;
+      .form-detail{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        width: 70%;
+        .icon {
+          width: 15%;
+          margin:0 auto;
+          margin-bottom: 2%;
+          background-color: #e7e7e7;
+          padding: 2.5%;
+          border-radius: 50%;
+          img{
+            width: 100%;
+          }
+        }
+        h1 {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+        input {
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-radius: none;
+          border-bottom: 2px solid #213159;
+          margin-bottom: 7%;
+          background-color: white;
+        }
+        .sign-up {
+          background-color: #213159;
+          color: #e7e7e7;
+          border: 1px solid #213159;
+          padding: 3px;
+        }
+        h5 {
+          margin-top: 8%;
+          text-align: center;
+          font-size: 1rem;
+          font-weight: 100;
+          span {
+            font-weight: bold;
+            color: #3d6098;
+            text-decoration: underline #3d6098;
+          }
+        }
+        .sign-in {
+          margin-top: 8%;
+          background-color: #3d6098;
+          color: #e7e7e7;
+          border: 1px solid #3d6098;
+          padding: 3px;
+        }
+      }
+    }
+    .login-overview{
+      width: 55%;
+      background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.65), rgba(245, 246, 252, 0.65)),url('../../../public/project-images/mountain_4.jpeg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      padding-top: 12%;
+      padding-left: 7%;
+      padding-right: 7%;
+      color: #213159;
+      text-align: center;
+      h1 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 2%;
+      }
+      button {
+      margin-top: 2%;
+      background-color: #3d6098;
+      color: #e7e7e7;
+      border: 1px solid #3d6098;
+      padding: 3px;
+      width: 50%;
+      }
+    }
+  }
+}

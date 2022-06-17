@@ -12,9 +12,10 @@ class Resort(models.Model):
   beginner = models.PositiveIntegerField(default=None)
   intermediate = models.PositiveIntegerField(default=None)
   expert = models.PositiveIntegerField(default=None)
-  mountain_range = models.CharField(max_length=250, default=None)
+  mountain_range = models.CharField(max_length=250, default=None) # blank=True)
   mountain_image = models.CharField(max_length=250, default=None, null=True)
   resort_image = models.CharField(max_length=250, default=None, null=True)
+  restaurant_summary = models.CharField(max_length=300, default=None, null=True)
   mountain_detail = models.ManyToManyField(
         'mountains.Mountain',
         related_name='resorts',
@@ -25,6 +26,13 @@ class Resort(models.Model):
         related_name='resorts',
         blank=True
   )
+  owner = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='resorts',
+        # on_delete=models.CASCADE,
+        blank=True
+    )
+
 
 
   def __str__(self):

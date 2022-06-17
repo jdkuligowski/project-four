@@ -75,6 +75,30 @@ input{
   padding: 5px;
 }
 
+button, select {
+    border-radius: 10px;
+  }
+
+select {
+  background-color: #213159;
+  padding: 0;
+  width: 75px;
+  font-size: 2rem;
+  border: 2px solid #213159;
+  border-radius: 10px;
+  // border: #e7e7e7;
+  border-radius: 2px;
+  text-align: center;
+}
+
+option {
+  padding: 0;
+  border-radius: 20px;
+  p {
+    
+  }
+}
+
 
 @media (min-width: 576px) {
   .container {

@@ -9,6 +9,8 @@ const ResortOverview = () => {
 
   const [resorts, setResorts] = useState([])
 
+  
+
 
 
   useEffect(() => {
@@ -19,6 +21,8 @@ const ResortOverview = () => {
     }
     getResorts()
   }, [])
+
+
 
 
 

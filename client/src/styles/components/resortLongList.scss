@@ -1,0 +1,258 @@
+.resort-page {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #e7e7e7;
+  color: #213159;
+  .title {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.6), rgba(245, 246, 252, 0.8)),url('../../../public/project-images/mountain_4.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 7%;
+    padding-top: 7%;
+    text-align: center;
+    color: #213159;
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    h4{
+    padding-right: 15%;
+    padding-left: 15%;
+    font-size: 1.1rem;
+    }
+  }
+}
+
+
+
+.resort-list {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 1%;
+    color: #213159;
+    h3 {
+      font-size: 1.3rem;
+      margin-left: 10px;
+    }
+    .resort-grid {
+      margin-top: 1%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      
+      .resorts {
+        width: calc(100% /2 - 20px);
+        display:flex;
+        flex-direction: row;
+        background-color: white;
+        margin: 10px;
+        .resort-image {
+          width: 50%;
+          img{
+            width: 100%;
+            height: 260px;
+            background: linear-gradient( rgba(61, 96, 152, 0.4), rgba(61, 96, 152, 0.1));
+
+          }
+        }
+        .resort-content {
+          width: 50%;
+          color: #213159;
+          text-decoration: underline white;
+          hr {
+            margin: 3%;
+          }
+          .buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0%;
+            margin-top: 2%;
+            button {
+              background-color: #3d6098;
+              color: #e7e7e7;
+              font-size: 0.6rem;
+              font-weight: bold;
+              // margin-left: 42%;
+              border: 2px solid white;
+              border-radius: 5px;
+              a {
+                color: #e7e7e7;
+                text-decoration: underline #3d6098;
+              }
+            }
+            .delete {
+              background-color: #b42033;
+              text-decoration: underline #b42033;
+          }
+          }
+          h1 {
+            font-size: 0.9rem;
+            margin-top: 4%;
+            margin-bottom: 0;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+
+          }
+          .info-row {
+            display: flex;
+            align-items: center;
+            margin-top: 1%;
+            margin-left: 10%;
+            .icon-container {
+              width: 8%;
+              margin-right: 5%;
+              img {
+                width:100%;
+              }
+              .black-colour {
+                background-color: black;
+                border-radius: 10px;
+                color: black;
+                text-decoration: underline black;
+              }
+              .red-colour {
+                background-color: red;
+                border-radius: 10px;
+                color: red;
+                text-decoration: underline red;
+              }
+              .blue-colour {
+                background-color: blue;
+                border-radius: 10px;
+                color: blue;
+                text-decoration: underline blue;
+              }
+            }
+            h3 {
+              font-size: 0.8rem;
+              text-decoration: none;
+              margin: 0;
+            }
+            
+          }
+        }
+      }
+    }
+}
+
+.add-resort-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2%;
+  button{
+    background-color:#b42033;
+    color: #e7e7e7;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid #e7e7e7;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
+
+
+.add-resort-modal{
+  color: #213159;
+  background-color: #e7e7e7;
+  .add-header{
+    background-color: #213159;
+    .add-title{
+      font-family: 'Roboto Mono', monospace; 
+    }
+  }
+  h6 {
+    font-weight: bold;
+  }
+  .add-resort-body {
+    padding-left: 0;
+    padding-right: 0;
+    .summary {
+      .summary-details {
+        display: flex;
+
+        input {
+          width: 95%;
+          font-size: 0.7rem;
+          padding-top: 3%;
+          padding-bottom: 3%;
+        }
+      }
+    }
+    .resort-stats {
+      .resort-stats-details {
+        display: flex;
+        label {
+          font-size: 0.8rem;
+          width: 70%;
+        }
+        input {
+          width: 25%;
+          font-size: 0.7rem;
+        }
+      }
+    }
+    .ski-stats {
+      .ski-stats-details {
+        .ski-stat-row{
+          display: flex;
+          margin-bottom: 1%;
+          .blue {
+            width: 5%;
+            height: 5%;
+            background-color: blue;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+          .red {
+            width: 5%;
+            height: 5%;
+            background-color: red;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+          .black {
+            width: 5%;
+            height: 5%;
+            background-color: black;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+          label {
+            width: 30%;
+            font-size: 0.8rem;
+          }
+          input {
+            width: 15%;
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+    .image-upload {
+      .upload {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1%;
+        label {
+          width: 50%;
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+        input {
+          width: 24%;
+          padding-left: 0;
+          background-color: #213159;
+          border: 3px solid #213159;
+          font-size: 0.7rem;
+          color: white;
+
+        }
+        
+      }
+    }
+  }
+}

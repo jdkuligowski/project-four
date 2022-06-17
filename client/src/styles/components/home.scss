@@ -1,5 +1,5 @@
 .page-wrapper {
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.4), rgba(0, 0, 0, 0.7)),url('../../../public/project-images/mountain_4.jpeg');
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.2), rgba(245, 246, 252, 1)), url('../../../public/project-images/mountain_4.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -7,29 +7,67 @@
 }
 
 .top-section {
-  height: 100vh;
+  height: 93vh;
   display: flex;
-  align-items: center;
-  padding-top: 33%;
+  // align-items: center;
+  flex-direction: column;
+  position: relative;
+  
+  // padding-top: 40%;
+  font-family: 'Roboto Mono', monospace;
+  
   .intro-content {
-    padding-left: 0%;
-    width: 50%;
-    text-align: center;
-    color: white;
+    padding-left: 10%;
+    width: 60%;
+    // text-align: center;
+    color: #213159; 
+    position: absolute;
+    bottom: 5%;
     h1 {
-      font-size: 5rem;
-      margin-bottom: 0px;
+      font-size: 3rem;
       margin-top: 0px;
-
+      padding-bottom: 1%;
+      margin: 0;
     }
+    h4 {
+      font-size: 1rem;
+      padding-bottom: 1%;
+    }
+  }
+  .features{
+    display: flex;
+    // justify-content: space-between;
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 35%;
+      text-align: center;
+      // margin-right: 10%;
+      .icon-container {
+        width: 35%;
+        background-color: #e7e7e7;
+        padding: 5%;
+        border-radius: 50%;
+        img{
+          width: 100%;
+        }
+      }
+      h2{
+        font-size: 1.0rem;
+      }
+      p {
+        font-size: 0.7rem;
+        padding-left:10px ;
+        padding-right:10px ;
+      }
+    }
+  }
+  button {
+    // margin-left: 10%;
+    color: #e7e7e7;
+    background-color: #213159;
+    padding: 1%;
   }
 }
 
-
-.middle-section {
-  height: 100vh;
-}
-
-.bottom-section {
-  height: 100vh;
-}

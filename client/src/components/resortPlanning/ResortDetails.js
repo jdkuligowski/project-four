@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
+import { scroller } from 'react-scroll'
+import Modal from 'react-bootstrap/Modal'
+import ModalImage from 'react-modal-image'
+
 
 
 
 const ResortDetails = () => {
 
+
   const [resorts, setResorts] = useState([])
   const [mountains, setMountains] = useState([])
   const [errors, setErrors] = useState(false)
   const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const getResorts = async () => {
@@ -17,6 +23,7 @@ const ResortDetails = () => {
         const { data } = await axios.get(`/api/resorts/${id}`)
         setResorts(data)
         console.log(data)
+        window.scrollTo(0, 0)
       } catch (error) {
         setErrors(true)
       }
@@ -37,13 +44,110 @@ const ResortDetails = () => {
     getMountains()
   }, [])
 
+  const scrollerFunction = () => {
+    scroller.scrollTo('grid-title', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    })
+  }
 
+  const skiSelector = () => {
+    navigate(`/resorts/${id}/selector`)
+  }
+
+  const restaurantsNav = () => {
+    navigate(`/resorts/${id}/restaurants`)
+  }
+
+  // Modal pop up
+  const [show, setShow] = useState(false)
+  const modalClose = () => {
+    setShow(false)
+  }
+  const modalShow = () => setShow(true)
+
+
+
+  const [languages, setLanguagesData] = useState()
+
+  const [languageState, setLanguageState] = useState([])
+
+  const getData = () => {
+    window.addEventListener('storage', () => {
+      console.log('change to local storage')
+      const data = JSON.parse(localStorage.getItem('language-state'))
+      console.log('data->', data)
+      if (data) setLanguageState(data)
+      console.log('current language ->', languageState)
+    })
+  }
+
+  useEffect(() => {
+    getData()
+  })
+
+
+
+
+  useEffect(() => {
+    const getLanguages = async () => {
+      const { data } = await axios.get('/api/language/')
+      setLanguagesData(data)
+      console.log('language dataset ->', data)
+    }
+    getLanguages()
+  }, [])
+
+  const buttonRef = useRef()
+
+  function handleBackClick() {
+    buttonRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <section className='ski-areas-page'>
       {/* Top section of the page with the image and name of the resort */}
-      <section className="resort-overview">
+      <section className="resort-overview" id={resorts.resort}>
         <h1>{resorts.resort}</h1>
+        <div className='feature-section'>
+          <button onClick={handleBackClick}> 
+            <div className='feature'>
+              <div className='icon-image'>
+                <img src="/project-images/cable-car-cabin.png" alt="icon" />
+              </div>
+              <h4>{languages ? languageState === 'english' ? languages[35].english : languageState === 'french' ? languages[35].french : languages[35].german : '' }</h4>
+            </div>
+          </button>
+          <button onClick={skiSelector}>
+            <div className='feature'>
+              <div className='icon-image'>
+                <img src="/project-images/ski.png" alt="icon" />
+              </div>
+              <h4>Ski Selector</h4>
+            </div>
+          </button>
+          <button onClick={restaurantsNav}>
+            <div className='feature'>
+              <div className='icon-image'>
+                <img src="/project-images/fork.png" alt="icon" />
+              </div>
+              <h4>{languages ? languageState === 'english' ? languages[37].english : languageState === 'french' ? languages[37].french : languages[37].german : '' }</h4>
+            </div>
+          </button>
+          <div className='feature'>
+            <div className='icon-image'>
+              <img src="/project-images/ski_2.png" alt="icon" />
+            </div>
+            <h4>{languages ? languageState === 'english' ? languages[38].english : languageState === 'french' ? languages[38].french : languages[38].german : '' }</h4>
+          </div>
+          <div className='feature'>
+            <div className='icon-image'>
+              <img src="/project-images/morning-snow.png" alt="icon" />
+            </div>
+            <h4>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : '' }</h4>
+          </div>
+        </div>
         {/* Banner at the bottom of the image showing the key stats from the resort */}
         <div className='resort-info'>
           <div className='resort-summary'>
@@ -70,7 +174,7 @@ const ResortDetails = () => {
                 .
               </div>
             </div>
-            <h4>{resorts.beginner} beginner</h4>
+            <h4>{resorts.beginner} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languages[19].german : '' }</h4>
           </div>
           <div className='resort-summary'>
             <div className='colour-icon'>
@@ -78,7 +182,7 @@ const ResortDetails = () => {
                 .
               </div>
             </div>
-            <h4>{resorts.intermediate} intermediate</h4>
+            <h4>{resorts.intermediate} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languages[18].german : '' }</h4>
           </div>
           <div className='resort-summary'>
             <div className='colour-icon'>
@@ -86,14 +190,14 @@ const ResortDetails = () => {
                 .
               </div>
             </div>
-            <h4>{resorts.expert} expert</h4>
+            <h4>{resorts.expert} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languages[17].german : '' }</h4>
           </div>
         </div>
       </section>
       {errors ? 'Sorry can\'t load' :
-        <section className="resort-details">
+        <section className="mountain-details">
 
-          <h2>{mountains.length} ski areas in {resorts.resort}</h2>
+          <h2 className='grid-title' ref={buttonRef}>{mountains.length} {languages ? languageState === 'english' ? languages[40].english : languageState === 'french' ? languages[40].french : languages[40].german : '' } {resorts.resort}</h2>
           <hr />
           <div className="resort-grid">
             {mountains.map(m => {
@@ -111,7 +215,7 @@ const ResortDetails = () => {
                               .
                             </div>
                           </div>
-                          <h4>{m.blue_runs} beginner</h4>
+                          <h4>{m.blue_runs} {languages ? languageState === 'english' ? languages[19].english : languageState === 'french' ? languages[19].french : languages[19].german : '' }</h4>
                         </div>
                         <div className='mountain-summary'>
                           <div className='colour-icon'>
@@ -119,7 +223,7 @@ const ResortDetails = () => {
                               .
                             </div>
                           </div>
-                          <h4>{m.red_runs} intermediate</h4>
+                          <h4>{m.red_runs} {languages ? languageState === 'english' ? languages[18].english : languageState === 'french' ? languages[18].french : languages[18].german : '' }</h4>
                         </div>
                         <div className='mountain-summary'>
                           <div className='colour-icon'>
@@ -127,7 +231,7 @@ const ResortDetails = () => {
                               .
                             </div>
                           </div>
-                          <h4>{m.black_runs} expert</h4>
+                          <h4>{m.black_runs} {languages ? languageState === 'english' ? languages[17].english : languageState === 'french' ? languages[17].french : languages[17].german : '' }</h4>
                         </div>
                       </div>
                     </div>
@@ -136,8 +240,15 @@ const ResortDetails = () => {
                       <h4>{m.other}</h4>
                       <hr />
                       <div className='resort-buttons'>
-                        <button>Piste map</button>
-                        <button>Where to eat</button>
+                        <button className='piste-map-btn' onClick={modalShow}>{languages ? languageState === 'english' ? languages[41].english : languageState === 'french' ? languages[41].french : languages[41].german : '' }</button>
+                        {/* <Modal show={show} onHide={modalClose} backdrop='static' className='piste-map-modal'>
+                          <Modal.Body className='piste-map-body'>
+                            <div className='modal-image-container'>
+                              <img src={m.ski_map} alt='ski map' />
+                            </div>
+                          </Modal.Body>
+                        </Modal> */}
+                        <button>{languages ? languageState === 'english' ? languages[42].english : languageState === 'french' ? languages[42].french : languages[42].german : '' }</button>
                       </div>
                       <hr />
                       <div className='resort-ratings'>
@@ -146,7 +257,7 @@ const ResortDetails = () => {
                             <img src="/project-images/location.png" alt="location icon" />
                           </div>
                           <div className="rating-name">
-                            <h5>Location</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[43].english : languageState === 'french' ? languages[43].french : languages[43].german : '' }</h5>
                           </div>
                           <div className="rating-detail">
                             <div className='star-array'>
@@ -158,7 +269,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{m.location_car}</p>
+                            <p>{languages ? languageState === 'english' ? m.location_car : languageState === 'french' ? m.location_car_fr : m.location_car_de : '' }</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -178,7 +289,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{m.piste}</p>
+                            <p>{languages ? languageState === 'english' ? m.piste : languageState === 'french' ? m.piste_fr : m.piste_de : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -186,7 +297,7 @@ const ResortDetails = () => {
                             <img src="/project-images/goggles.png" alt="" />
                           </div>
                           <div className="rating-name">
-                            <h5>Off-piste</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[44].english : languageState === 'french' ? languages[44].french : languages[44].german : '' }</h5>
                           </div>
                           <div className="rating-detail">
                             <div className='star-array'>
@@ -198,7 +309,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{m.off_piste}</p>
+                            <p>{languages ? languageState === 'english' ? m.off_piste : languageState === 'french' ? m.off_piste_fr : m.off_piste_de : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -206,7 +317,7 @@ const ResortDetails = () => {
                             <img src="/project-images/restaurant.png" alt="" />
                           </div>
                           <div className="rating-name">
-                            <h5>Lunch</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[45].english : languageState === 'french' ? languages[45].french : languages[45].german : '' }</h5>
                           </div>
                           <div className="rating-detail">
                             <div className='star-array'>
@@ -218,7 +329,7 @@ const ResortDetails = () => {
                                 )
                               })}
                             </div>
-                            <p>{m.lunch}</p>
+                            <p>{languages ? languageState === 'english' ? m.lunch : languageState === 'french' ? m.lunch_fr : m.lunch_de : ''}</p>
                           </div>
                         </div>
                         <div className="rating-row">
@@ -226,11 +337,11 @@ const ResortDetails = () => {
                             <img src="/project-images/morning-snow.png" alt="" />
                           </div>
                           <div className="rating-name">
-                            <h5>Weather</h5>
+                            <h5>{languages ? languageState === 'english' ? languages[39].english : languageState === 'french' ? languages[39].french : languages[39].german : '' }</h5>
                           </div>
                           <div className="rating-detail">
 
-                            <p>{m.weather_comment}</p>
+                            <p>{languages ? languageState === 'english' ? m.weather_comment : languageState === 'french' ? m.weather_comment_fr : m.weather_comment_de : ''}</p>
                           </div>
                         </div>
                       </div>

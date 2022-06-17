@@ -21,6 +21,7 @@ urlpatterns = [
     path('api/resorts/', include('resorts.urls')),
     path('api/mountains/', include('mountains.urls')),
     path('api/restaurants/', include('restaurants.urls')),
-    path('api/auth/', include('jwt_auth.urls'))
+    path('api/auth/', include('jwt_auth.urls')),
+    path('api/language/', include('translation.urls'))
     # path('api/lunches/', include('mountains.urls'))
 ]
